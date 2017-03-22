@@ -45,17 +45,6 @@
     	<!-- 文件地址匹配,/*表示所有的地址都要过滤 -->
     	<url-pattern>/*</url-pattern>
   	</filter-mapping>
-  	<!-- ajax请求过滤器 -->
-  	<filter>
-    	<filter-name>ajaxFilter</filter-name>
-    	<filter-class>com.sinosoft.framework.core.common.filter.AjaxFilter</filter-class>
-    	<!-- <filter-class>com.sinosoft.tcmd3.system.util.filter.AjaxFilter</filter-class> -->
-  	</filter>
-  	<filter-mapping>
-    	<filter-name>ajaxFilter</filter-name>
-    	<!-- 文件地址匹配,/*表示所有的地址都要过滤 -->
-    	<url-pattern>/*</url-pattern>
-  	</filter-mapping>
   	<!-- 配置springmvc分发类文件 -->
   	<servlet>
     	<servlet-name>springMvc</servlet-name>
