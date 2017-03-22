@@ -4,10 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<link href="resources/css/plugins/bootstrap/bootstrap.css" />
+<link href="resources/css/plugins/jquery/jquery-ui.min.css" />
+<link href="resources/css/app/index.css" />
+<title>图书管理系统</title>
 </head>
 <body>
-
+	<div id="index_center">
+	
+	</div>
 <script type="text/javascript" data-main="resources/js/app/main.js" src="resources/js/component/requirejs/require-2.1.11.js"></script>
 </body>
 </html>
