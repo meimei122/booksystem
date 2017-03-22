@@ -1,7 +1,82 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
-
-<web-app>
-  <display-name>Archetype Created Web Application</display-name>
+<?xml version="1.1" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+<!-- Tomcat启动时首先加载web.xml文件 -->
+	<display-name>booksystem</display-name>
+	<!-- 全局配置文件路径配置 -->
+  	<context-param>
+    	<param-name>contextConfigLocation</param-name>
+    	<param-value>
+			classpath:/applicationContext.xml
+		</param-value>
+  	</context-param>
+  	<!-- 日志文件路径配置 -->
+  	<context-param>
+    	<param-name>log4jConfigLocation</param-name>
+    	<param-value>classpath:/log4j.xml</param-value>
+  	</context-param>
+  	<context-param>
+    	<param-name>spring.profiles.default</param-name>
+    	<param-value>production</param-value>
+  	</context-param>
+  	<!-- 加载类监听器 -->
+  	<listener>
+    	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  	</listener>
+  	<!-- 日志管理监听器 -->
+  	<listener>
+    	<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+  	</listener>
+  	<!-- 编码过滤器,设定编码格式为UTF-8 -->
+  	<filter>
+    	<filter-name>encodingFilter</filter-name>
+    	<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    	<init-param>
+      		<param-name>encoding</param-name>
+      		<param-value>UTF-8</param-value>
+   		</init-param>
+    	<init-param>
+      		<param-name>forceEncoding</param-name>
+      		<param-value>true</param-value>
+    	</init-param>
+	</filter>
+	<!-- 过滤器映射配置 -->
+  	<filter-mapping>
+    	<filter-name>encodingFilter</filter-name>
+    	<!-- 文件地址匹配,/*表示所有的地址都要过滤 -->
+    	<url-pattern>/*</url-pattern>
+  	</filter-mapping>
+  	<!-- ajax请求过滤器 -->
+  	<filter>
+    	<filter-name>ajaxFilter</filter-name>
+    	<filter-class>com.sinosoft.framework.core.common.filter.AjaxFilter</filter-class>
+    	<!-- <filter-class>com.sinosoft.tcmd3.system.util.filter.AjaxFilter</filter-class> -->
+  	</filter>
+  	<filter-mapping>
+    	<filter-name>ajaxFilter</filter-name>
+    	<!-- 文件地址匹配,/*表示所有的地址都要过滤 -->
+    	<url-pattern>/*</url-pattern>
+  	</filter-mapping>
+  	<!-- 配置springmvc分发类文件 -->
+  	<servlet>
+    	<servlet-name>springMvc</servlet-name>
+    	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    	<!-- 初始化参数地址 -->
+    	<init-param>
+      		<param-name>contextConfigLocation</param-name>
+      		<param-value>classpath:/spring-mvc.xml</param-value>
+    	</init-param>
+    	<!-- 标记在启动时就先加载这个Servlet,在大于0的情况下,值越小加载优先级越高 -->
+    	<load-on-startup>1</load-on-startup>
+  	</servlet>
+  	<!-- springMvc映射地址 -->
+  	<servlet-mapping>
+    	<servlet-name>springMvc</servlet-name>
+    	<!-- 地址参数匹配,映射地址需要以"/"开头,或者结束 -->
+    	<url-pattern>/</url-pattern>
+  	</servlet-mapping>
+  	<!-- 设定默认会话超时的时间间隔 -->
+  	<session-config>
+  		<!-- 设定为30分钟 -->
+    	<session-timeout>30</session-timeout>
+  	</session-config>
 </web-app>
