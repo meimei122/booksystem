@@ -6,16 +6,159 @@
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <name>booksystem Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>booksystem</scope>
-    </dependency>
-  </dependencies>
-  <build>
-    <finalName>booksystem</finalName>
-  </build>
+
+	<parent>  
+	    <groupId>org.springframework.boot</groupId> 
+	    <artifactId>spring-boot-starter-parent</artifactId>
+	    <version>1.4.0.RELEASE</version>
+	</parent>
+	<properties>  
+	  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    	<java.version>1.8</java.version>
+	</properties>
+	<dependencies>  
+		<dependency>
+			<groupId>org.springframework.boot</groupId>   
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+			<exclusions>
+                <!-- <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion> -->
+                <!-- <exclusion>
+					<groupId>ch.qos.logback</groupId>
+					<artifactId>logback-classic</artifactId>
+                </exclusion> -->
+            </exclusions>
+		</dependency>
+		<dependency>    
+			<groupId>org.springframework.boot</groupId>    
+			<artifactId>spring-boot-starter-test</artifactId>     
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.4.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.3.0</version>
+		</dependency>
+<!--    devtools可以实现页面热部署（即页面修改后会立即生效，这个可以直接在application.properties文件中配置spring.thymeleaf.cache=false来实现），   
+实现类文件热部署（类文件修改后不会立即生效），实现对属性文件的热部署。    即devtools会监听classpath下的文件变动，并且会立即重启应用（发生在保存时机），注意：因为其采用的虚拟机机制，该项重启是很快的  -->  
+		<dependency>    
+			<groupId>org.springframework.boot</groupId>    
+			<artifactId>spring-boot-devtools</artifactId>    
+			<optional>true</optional>  
+		</dependency>  
+		<!-- mybatis -->  
+		<!-- <dependency>    
+			<groupId>org.mybatis.spring.boot</groupId>    
+			<artifactId>mybatis-spring-boot-starter</artifactId>    
+			<version>1.1.1</version>  
+		</dependency>   -->
+		<!-- 用于停止spring boot 服务 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<!-- mybatis 分页插件 -->  
+		<dependency>    
+			<groupId>com.github.pagehelper</groupId>    
+			<artifactId>pagehelper</artifactId>    
+			<version>4.1.6</version>  
+		</dependency>  
+		<!--mysql-->  
+		<dependency>    
+			<groupId>mysql</groupId>    
+			<artifactId>mysql-connector-java</artifactId>  
+		</dependency>  
+		<!--druid-->  
+		<dependency>    
+			<groupId>com.alibaba</groupId>    
+			<artifactId>druid</artifactId>    
+			<version>1.0.27</version>  
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.7</version>
+		</dependency>
+		
+		<!-- 换用nekohtml解析模板 -->
+		<dependency>
+	    	<groupId>net.sourceforge.nekohtml</groupId>
+	    	<artifactId>nekohtml</artifactId>
+		</dependency>
+		<!-- 配置spring security结合thymeleaf进行权限管理 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <!-- <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2</artifactId>
+        </dependency> -->
+		
+	</dependencies>
+
+	<build>  
+		<finalName>student_file_management_system</finalName>  
+		<plugins>    
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<dependencies>
+					<!--springloaded hot deploy -->
+					<dependency>
+						<groupId>org.springframework</groupId>
+						<artifactId>springloaded</artifactId>
+						<version>1.2.6.RELEASE</version>
+					</dependency>
+				</dependencies>
+				<!-- <executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+						<configuration>
+							<classifier>exec</classifier>
+						</configuration>
+					</execution>
+				</executions> -->
+			</plugin>  
+		</plugins> 
+		
+	</build>
+	<repositories>
+        <repository>
+            <id>spring-snapshots</id>
+            <url>http://repo.spring.io/snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-milestones</id>
+            <url>http://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-snapshots</id>
+            <url>http://repo.spring.io/snapshot</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>spring-milestones</id>
+            <url>http://repo.spring.io/milestone</url>
+        </pluginRepository>
+    </pluginRepositories>
 </project>
