@@ -14,6 +14,7 @@ body{
     height: 60px;
     padding-left: 8px;
     background: transparent;
+    color: #fff;
 }
 /*修改input输入框中提示信息文字颜色*/
 .comInput::-webkit-input-placeholder {

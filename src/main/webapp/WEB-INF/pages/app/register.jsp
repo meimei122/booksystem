@@ -29,6 +29,11 @@
 				<div>
 					<input type="password" class="comInput" id="password2" name="password2" placeholder="确认密码"/>
 				</div>
+				
+				<div class="buttons">
+					<button class="btn btn-info" value="register" type="submit">注册</button>
+					<button class="btn btn-info" value="cancel" type="reset">重置</button>
+				</div>
 			</form>
 		</div>
 		<div class="col-lg-3"></div>
