@@ -2957,7 +2957,7 @@ select[multiple].input-lg {
 .form-horizontal .form-group {
   margin-right: -15px;
   margin-left: -15px;
-  width: 76%;/* 输入框的kuan */
+  width: 100%;
 }
 @media (min-width: 768px) {
   .form-horizontal .control-label {

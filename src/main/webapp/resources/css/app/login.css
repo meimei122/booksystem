@@ -30,6 +30,7 @@ a{ color: rgba(255, 255, 255, 0.6);outline: none;text-decoration: none;-webkit-t
 a:hover,a:focus{color:#74777b;text-decoration: none;}
 
 /*页面样式开始*/
+
 .demo{
 	padding: 20px 0;
 }
@@ -38,6 +39,8 @@ a:hover,a:focus{color:#74777b;text-decoration: none;}
 	padding-bottom: 40px;
 	border-radius: 15px;
 	text-align: center;
+	width: 555px;
+	margin-left: 30px;
 }
 .form-horizontal .heading{
 	display: block;
@@ -49,8 +52,9 @@ a:hover,a:focus{color:#74777b;text-decoration: none;}
 }
 .form-horizontal .form-group{
 	padding: 0 40px;
-	margin: 0 0 25px 0;
+	margin: 0 0 0 0;
 	position: relative;
+	height: 66px;
 }
 .form-horizontal .form-control{
 	background: #f0f0f0;

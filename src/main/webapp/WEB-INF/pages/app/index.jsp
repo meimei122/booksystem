@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div id="index_center">
-	
+		index页面
 	</div>
 <script type="text/javascript" data-main="resources/js/app/main.js" src="resources/js/component/requirejs/require-2.1.11.js"></script>
 </body>

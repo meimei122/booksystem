@@ -5,9 +5,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="resources/css/plugins/font-awesomer/font-awesome.min.css" />
-<link rel="stylesheet" href="resources/css/plugins/bootstrap/bootstrap.min.css" />
+<link rel="stylesheet" href="resources/css/plugins/bootstrap/bootstrap.css" />
+<link rel="stylesheet" href="resources/css/plugins/bootstrap/bootstrapValidator.min.css" />
 <link rel="stylesheet" href="resources/css/app/login.css" />
 <script type="text/javascript" src="resources/js/component/jquery/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="resources/js/component/bootstrap/bootstrap-3.3.5.min.js"></script>
+<script type="text/javascript" src="resources/js/component/bootstrap/bootstrapValidator.min.js"></script>
 <script type="text/javascript" src="resources/js/app/login.js"></script>
 <title>图书管理系统登录页面</title>
 </head>
@@ -16,14 +19,16 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-offset-3 col-md-6">
-					<form class="form-horizontal">
+					<form id="loginForm" class="form-horizontal" action="index" method="post">
 						<span class="heading">用户登录</span>
 						<div class="form-group">
-							<input type="email" class="form-control" id="inputEmail3" placeholder="用户名">
+							<!-- <div class="input-group"> -->
+								<input type="text" class="form-control" id="username" name="username" placeholder="用户名">
+							<!-- </div> -->
 							<i class="fa fa-user"></i>
 						</div>
 						<div class="form-group help">
-							<input type="password" class="form-control" id="inputPassword3" placeholder="密　码">
+							<input type="password" class="form-control" id="password" name="password" placeholder="密　码">
 							<i class="fa fa-lock"></i>
 						</div>
 						<div class="form-group">
