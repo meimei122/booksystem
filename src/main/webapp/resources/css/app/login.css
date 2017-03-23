@@ -20,6 +20,7 @@ body, html { font-size: 100%; 	padding: 0; margin: 0;}
 }
 
 body{
+	overflow:hidden;
 	background:#00b4ef;
 	color: #D5D6E2;
 	font-weight: 500;
