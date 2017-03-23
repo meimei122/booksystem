@@ -18,7 +18,7 @@
 	<div>
 		<div class="col-lg-3"></div>
 		<div class="col-lg-6 register">
-			<h2 class="title">注 册</h2>
+			<h2 class="title">用 户 注 册</h2>
 			<form id="registerForm" class="registerFormStyle">
 				<div class="form-group">
 					<input type="text" class="comInput" id="username" name="username" placeholder="用户名"/>
