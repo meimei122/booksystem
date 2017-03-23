@@ -1,0 +1,27 @@
+body{
+	text-align: center;
+	margin: auto;
+	background:#00b4ef;
+	overflow: hidden;
+}
+.title{
+	
+}
+.comInput{
+	border: 0;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    height: 60px;
+    padding-left: 8px;
+    background: transparent;
+}
+/*修改input输入框中提示信息文字颜色*/
+.comInput::-webkit-input-placeholder {
+  color: #fff;
+}
+.comInput:-moz-placeholder {
+  color: #fff;
+}
+.comInput:-ms-input-placeholder {
+  color: #fff;
+}
