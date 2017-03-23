@@ -9,7 +9,14 @@ require.config({
 		orange: 'app/orange',
 		bootstrap: 'component/bootstrap/bootstrap-3.3.5.min',
 		html5shiv: 'component/bootstrap/html5shiv.min',
-		respond: 'component/bootstrap/respond'
+		respond: 'component/bootstrap/respond',
+		editable: 'component/bootstrap/bootstrap-editable.js',
+		table: 'component/bootstrap/bootstrap-table.js',
+		tableEdit: 'component/bootstrap/bootstrap-table-editable.js',
+		bootTableExport: 'component/bootstrap/bootstrap-table-export.js',
+		tableCN: 'component/bootstrap/bootstrap-table-zh-CN.js',
+		select2: 'component/bootstrap/select2.js',
+		tableExport: 'component/bootstrap/tableExport.js'
 	},
 	shim: {
 		'bootstrap': {
