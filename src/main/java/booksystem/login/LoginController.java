@@ -10,13 +10,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class LoginController {
 
 	/**
-	 *	初始状态到登录页面
+	 * 初始状态下进入到登录页面
+	 * @param model
+	 * @return
 	 */
 	@RequestMapping(method = RequestMethod.GET)
 	public String login(Model model) {
 		return "app/login";
 	}
 	
+	/**
+	 * 登录通过后进入到默认页面
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value = "index", method = RequestMethod.POST)
 	public String index(Model model) {
 		return "app/index";
