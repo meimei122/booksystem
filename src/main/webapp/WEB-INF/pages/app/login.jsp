@@ -11,6 +11,7 @@
 <script type="text/javascript" src="resources/js/component/jquery/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="resources/js/component/bootstrap/bootstrap-3.3.5.min.js"></script>
 <script type="text/javascript" src="resources/js/component/bootstrap/bootstrapValidator.min.js"></script>
+<script type="text/javascript" src="resources/js/app/background.js"></script>
 <script type="text/javascript" src="resources/js/app/login.js"></script>
 <title>图书管理系统登录页面</title>
 </head>
@@ -42,5 +43,6 @@
 			</div>
 		</div>
 	</div>
+	<canvas id="canv"></canvas>
 </body>
 </html>
