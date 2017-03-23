@@ -28,4 +28,14 @@ public class LoginController {
 	public String index(Model model) {
 		return "app/index";
 	}
+	
+	/**
+	 * 注册页面
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value = "register", method = RequestMethod.POST)
+	public String register(Model model) {
+		return "app/register";
+	}
 }

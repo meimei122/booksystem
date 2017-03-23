@@ -5,7 +5,7 @@ body{
 	overflow: hidden;
 }
 .title{
-	
+	color: #fff;
 }
 .comInput{
 	border: 0;
@@ -25,4 +25,18 @@ body{
 }
 .comInput:-ms-input-placeholder {
   color: #fff;
+}
+
+/* 按钮样式 */
+.submit{
+	margin-top: 20px;
+    float: left;
+    width: 48%;
+}
+
+.cancel{
+	margin-top: 20px;
+    float: right;
+    width: 48%;
+    margin-right: -9px;
 }
