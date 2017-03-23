@@ -18,6 +18,12 @@
 	<!-- 自动扫描注解 -->
 	<context:component-scan base-package="booksystem" />
 	
+	<!-- 定义静态资源文件映射路径 -->
+	<!-- <mvc:resources location="/images/" mapping="/resources/images/**"></mvc:resources>
+	<mvc:resources location="/fonts/" mapping="/resources/fonts/**"></mvc:resources>
+	<mvc:resources location="/css/" mapping="/resources/css/**"></mvc:resources>
+	<mvc:resources location="/js/" mapping="/resources/js/**"></mvc:resources> -->
+	
 	<!-- 定义view视图文件的位置 --> 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/pages/"/>
