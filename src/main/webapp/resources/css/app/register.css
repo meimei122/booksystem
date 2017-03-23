@@ -27,16 +27,23 @@ body{
   color: #fff;
 }
 
+.buttons button{
+	margin-top: 20px;
+	width: 48%;
+	height: 86px;
+    font-size: 36px;
+}
+
 /* 按钮样式 */
 .submit{
-	margin-top: 20px;
     float: left;
-    width: 48%;
 }
 
 .cancel{
-	margin-top: 20px;
     float: right;
-    width: 48%;
     margin-right: -9px;
+}
+
+.registerFormStyle .form-group{
+	height: 88px;
 }
