@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class LoginController {
 
 	/**
-	 * 初始状态下进入到登录页面
+	 * 登录页面
 	 * @param model
 	 * @return
 	 */
