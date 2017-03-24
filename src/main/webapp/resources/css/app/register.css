@@ -1,7 +1,7 @@
 body{
 	text-align: center;
 	margin: auto;
-	background:#00b4ef;
+	background:#74adaa;
 	overflow: hidden;
 }
 .title{
@@ -29,11 +29,15 @@ body{
   color: #fff;
 }
 
+.buttons{
+	height: 95px;
+}
+
 .buttons button{
-	margin-top: 20px;
+	margin-top: 10px;
 	width: 48%;
-	height: 86px;
-    font-size: 36px;
+	height: 65px;
+    font-size: 25px;
 }
 
 /* 按钮样式 */
@@ -47,5 +51,5 @@ body{
 }
 
 .registerFormStyle .form-group{
-	height: 88px;
+	height: 68px;
 }

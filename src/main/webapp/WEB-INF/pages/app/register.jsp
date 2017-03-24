@@ -40,7 +40,7 @@
 					<button class="btn btn-primary submit" value="register" type="submit">注  册</button>
 					<button class="btn btn-info cancel" value="cancel" type="reset">重  置</button>
 				</div>
-				
+				<a href="login">已有账号?那么回去登录吧</a>
 			</form>
 		</div>
 		<div class="col-lg-3"></div>

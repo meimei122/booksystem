@@ -8,6 +8,8 @@
 <title>个人信息</title>
 </head>
 <body>
-
+	<div id="person_center">
+	个人信息页面
+	</div>
 </body>
 </html>

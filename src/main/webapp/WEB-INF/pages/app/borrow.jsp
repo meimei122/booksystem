@@ -8,6 +8,8 @@
 <title>借书管理</title>
 </head>
 <body>
-
+	<div id="borrow_center">
+		借书页面
+	</div>
 </body>
 </html>

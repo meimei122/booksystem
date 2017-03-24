@@ -22,6 +22,7 @@
 			</section>
 		</div>
 		<div id="index_content">
+		首页
 		</div>
 	</div>
 <script type="text/javascript" data-main="resources/js/app/main.js" src="resources/js/component/require/require-2.1.11.js"></script>

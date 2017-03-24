@@ -38,7 +38,9 @@
 							<span class="text">记住密码</span>
 							<button type="submit" class="btn btn-default">登录</button>
 						</div>
+						<a href="register" style="color: #00b4ef">没有账号?注册一个吧</a>
 					</form>
+					
 				</div>
 			</div>
 		</div>
