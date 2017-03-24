@@ -10,17 +10,27 @@ require.config({
 		bootstrap: 'component/bootstrap/bootstrap-3.3.5.min',
 		html5shiv: 'component/bootstrap/html5shiv.min',
 		respond: 'component/bootstrap/respond',
-		editable: 'component/bootstrap/bootstrap-editable.js',
-		table: 'component/bootstrap/bootstrap-table.js',
-		tableEdit: 'component/bootstrap/bootstrap-table-editable.js',
-		bootTableExport: 'component/bootstrap/bootstrap-table-export.js',
-		tableCN: 'component/bootstrap/bootstrap-table-zh-CN.js',
-		select2: 'component/bootstrap/select2.js',
-		tableExport: 'component/bootstrap/tableExport.js'
+		bootstrapValidator: 'component/bootstrap/bootstrapValidator.min',
+		editable: 'component/bootstrap/bootstrap-editable',
+		bootTable: 'component/bootstrap/bootstrap-table',
+		bootTableEdit: 'component/bootstrap/bootstrap-table-editable',
+		bootTableExport: 'component/bootstrap/bootstrap-table-export',
+		tableCN: 'component/bootstrap/bootstrap-table-zh-CN',
+		select2: 'component/bootstrap/select2',
+		tableExport: 'component/bootstrap/tableExport'
 	},
 	shim: {
 		'bootstrap': {
 			deps: ['jquery','html5shiv','respond']
+		},
+		'bootstrapValidator': {
+			deps: ['jquery','bootstrap']
+		},
+		'bootTableExport':{
+			deps: ['jquery','bootTableCn','bootTable','tableExport']
+		},
+		'bootTableEdit':{
+			deps: ['jquery','bootTable','bootEdit']
 		}
 	}
 });
