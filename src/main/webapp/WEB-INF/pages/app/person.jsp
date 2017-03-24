@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="resources/js/app/person.js"></script>
 <title>个人信息</title>
 </head>
 <body>

@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="resources/js/app/borrow.js"></script>
 <title>借书管理</title>
 </head>
 <body>
