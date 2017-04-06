@@ -5,11 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="resources/js/app/returnBook.js"></script>
-<title>还书管理</title>
+<title>已借图书信息</title>
 </head>
 <body>
 	<div id="returnBook_center">
-	还书页面
+	已借图书信息
 	</div>
 </body>
 </html>
