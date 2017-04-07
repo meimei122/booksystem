@@ -34,16 +34,49 @@ public class LoginController {
 		return "app/login";
 	}
 	
+	/**
+	 * 判断用户名和密码是否匹配
+	 * @param students
+	 * @return
+	 */
 	@ResponseBody
-	@RequestMapping(value = "loginCheck",method = RequestMethod.POST)
-	public String loginCheck(Students students){
+	@RequestMapping(value = "checkPass",method = RequestMethod.POST)
+	public String checkPass(Students students){
 		Students studentResult = studentService.login(students);
 		boolean result = true;
 		if(studentResult==null){
-			result = true;
+			result = false;
 		}
 		else{
+			result = true;
+		}
+        Map<String, Boolean> map = new HashMap<>();  
+        map.put("valid", result);  
+        ObjectMapper mapper = new ObjectMapper();  
+        String resultString = "";  
+        try {  
+            resultString = mapper.writeValueAsString(map);  
+        } catch (JsonProcessingException e) {  
+            e.printStackTrace();  
+        }  
+        return resultString;  
+    }  
+	
+	/**
+	 * 判断用户名是否存在
+	 * @param students
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "checkName",method = RequestMethod.POST)
+	public String checkName(Students students){
+		Students studentResult = studentService.userName(students);
+		boolean result = true;
+		if(studentResult==null){
 			result = false;
+		}
+		else{
+			result = true;
 		}
         Map<String, Boolean> map = new HashMap<>();  
         map.put("valid", result);  

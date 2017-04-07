@@ -4,6 +4,6 @@
 <configuration>
 	<!--起别名  -->
 	<typeAliases>
-		<package name="org.lanqiao.entity"/>
+		<package name="booksystem.entity"/>
 	</typeAliases>
 </configuration>

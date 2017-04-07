@@ -5,12 +5,16 @@
 	<resultMap type = "Students" id = "StudentsResultMap">
 		<id property = "sid" column = "sid" />
 		<result property = "username" column = "username" />
-		<result property = "pass" column = "pass" />
+		<result property = "pass" column = "spass" />
 		<result property = "tel" column = "tel" />
 	</resultMap>
 	
 	<select id="login" parameterType="Students" resultMap="StudentsResultMap">
-		select * from student where username=#{username} and pass=#{pass}
+		select * from student where username=#{username} and spass=#{pass}
+	</select>
+	
+	<select id="userName" parameterType="Students" resultMap="StudentsResultMap">
+		select * from student where username=#{username}
 	</select>
 	
 	<!-- <update id="updateStudent" parameterType="StudentEntity">  

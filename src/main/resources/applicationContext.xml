@@ -15,70 +15,58 @@
 		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd"
 	default-lazy-init="true">
 	
-	<description>Spring公共配置 </description>
+	<!-- 自动扫描，支持注解方式，自动装配bean -->	
+		<context:component-scan base-package="booksystem"/>
+		<!-- 配置数据源 -->
+		<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+			<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+			<property name="url" value="jdbc:mysql://localhost:3306/booksystem" />
+			<property name="username" value="root" />
+			<property name="password" value="123" />
+		</bean>
+		<!-- 创建SqlSessionFactory，同时指定数据源 -->
+		<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    		<property name="dataSource" ref="dataSource"/><!-- 注入数据库连接池 -->
+    		<!-- 自动扫描mappers.xml文件 -->
+    		<property name="mapperLocations" value="classpath:booksystem/mapper/*.xml"/>
+    		<!-- mybatis配置文件 -->
+    		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
+		</bean>
+		<!-- 配置mybaits的sqlSessionFactory -->
+		<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+  			<property name="basePackage" value="booksystem.dao" />
+  			<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+		</bean>
+		<!-- 配置事物管理器 -->	
+		<bean id="transactionManager" 
+			class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+			<property name="dataSource" ref="dataSource"/>
+		</bean>
+		<!--  声明式容器事务管理 ,transaction-manager指定事务管理器为transactionManager -->
+    	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+	        <tx:attributes>
+	        	<!-- 方法对应的传播属性 -->
+	            <tx:method name="insert*" propagation="REQUIRED" />
+	            <tx:method name="update*" propagation="REQUIRED" />
+	            <tx:method name="edit*" propagation="REQUIRED" />
+	            <tx:method name="save*" propagation="REQUIRED" />
+	            <tx:method name="add*" propagation="REQUIRED" />
+	            <tx:method name="new*" propagation="REQUIRED" />
+	            <tx:method name="set*" propagation="REQUIRED" />
+	            <tx:method name="remove*" propagation="REQUIRED" />
+	            <tx:method name="delete*" propagation="REQUIRED" />
+	            <tx:method name="get*" propagation="REQUIRED" read-only="true"/> <!-- 只读模式 -->
+	            <tx:method name="find*" propagation="REQUIRED" read-only="true"/>
+	            <tx:method name="load*" propagation="REQUIRED" read-only="true"/>
+	            <tx:method name="*" read-only="true" />
+	        </tx:attributes>
+    	</tx:advice>
+    <!-- 配置事物切面 -->	
+    <aop:config expose-proxy="true">
+        <!-- 只对业务逻辑层实施事务 -->
+        <aop:pointcut id="serviceOperation" expression="execution(* booksystem.service.*.*(..))" />
+        <!-- Advisor定义，切入点和通知分别为txPointcut、txAdvice -->
+        <aop:advisor pointcut-ref="serviceOperation" advice-ref="txAdvice"/>
+    </aop:config>
 	
-	<aop:aspectj-autoproxy proxy-target-class="true"/>
-	
-	<!-- 读取配置文件 -->
-	<context:property-placeholder ignore-unresolvable="true" location="classpath*:/web/application.properties" />
-	<!-- 该 BeanPostProcessor 将自动对标注 @Autowired 的 Bean 进行注入 -->     
-   	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"></bean>  
-	<!-- 框架数据源配置, 使用druid连接池 -->
-	
-	<!-- 创建SqlSessionFactory，同时指定数据源 -->
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-   		<property name="dataSource" ref="dataSource"/><!-- 注入数据库连接池 -->
-   		<!-- 自动扫描mappers.xml文件 -->
-   		<property name="mapperLocations" value="classpath:booksystem/mapper/*.xml"/>
-   		<!-- mybatis配置文件 -->
-   		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
-	</bean>
-	<!-- 配置mybaits的sqlSessionFactory -->
-	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
- 			<property name="basePackage" value="booksystem.dao" />
- 			<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
-	</bean>
-	<!-- 配置事物管理器 -->	
-	<bean id="transactionManager" 
-		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSource"/>
-	</bean>
-
-	<!-- 图书管理系统数据源配置 -->
-	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
-		<property name="driverClassName" value="${tcmhipw.jdbc.driver}" />
-		<property name="url" value="${tcmhipw.jdbc.url}" />
-		<property name="username" value="${tcmhipw.jdbc.username}" />
-		<property name="password" value="${tcmhipw.jdbc.password}" />
-		<!-- sql防火墙 -->
-		<!-- <property name="filters" value="wall,mergeStat" /> -->
-		<!-- 申请连接的时候检测 -->
-		<property name="testWhileIdle" value="true"></property> 
-		<!-- 检测连接 -->
-		<property name="validationQuery" value="select 'x'"></property>
-		<!--maxActive: 最大连接数量 -->
-		<property name="maxActive" value="${tcmhipw.jdbc.pool.maxActive}" />
-		<!--initialSize: 初始化连接 -->
-		<property name="initialSize" value="${tcmhipw.jdbc.pool.maxIdle}" />
-	</bean>
-	
-	<!-- 配置事务管理器 -->
-	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-       <property name="dataSource" ref="dataSource" />  
- 	</bean>  
-	<!-- 配置事务传播特性 -->
-	<tx:advice id="txAdvice" transaction-manager="transactionManager">
-	    <tx:attributes>
-	      <tx:method name="add*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
-	      <tx:method name="delete*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
-	      <tx:method name="update*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
-	      <tx:method name="term*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
-	      <tx:method name="get*" propagation="SUPPORTS"/>
-	    </tx:attributes>
-	</tx:advice>
-	<!-- 配置参与事务的类 -->
-	<aop:config>
-		<aop:pointcut id="serviceMethod" expression="execution(* com.sinosoft.*.*.service.*.*(..))"/>
-		<aop:advisor pointcut-ref="serviceMethod" advice-ref="txAdvice" />
-	</aop:config>
 </beans>
