@@ -4,12 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="resources/css/app/borrow.css">
 <script type="text/javascript" src="resources/js/app/borrow.js"></script>
 <title>借书管理</title>
 </head>
 <body>
 	<div id="borrow_center">
-		借书页面
+		<div id="borrow_toolbar">
+	    </div>
+		<table id="borrow_table">
+	    </table>
 	</div>
 </body>
 </html>

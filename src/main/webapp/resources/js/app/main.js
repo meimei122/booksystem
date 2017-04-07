@@ -15,7 +15,7 @@ require.config({
 		bootTable: 'component/bootstrap/bootstrap-table',
 		bootTableEdit: 'component/bootstrap/bootstrap-table-editable',
 		bootTableExport: 'component/bootstrap/bootstrap-table-export',
-		tableCN: 'component/bootstrap/bootstrap-table-zh-CN',
+		bootTableCn: 'component/bootstrap/bootstrap-table-zh-CN',
 		select2: 'component/bootstrap/select2',
 		tableExport: 'component/bootstrap/tableExport'
 	},
@@ -26,11 +26,14 @@ require.config({
 		'bootstrapValidator': {
 			deps: ['jquery','bootstrap']
 		},
+		'bootTableCn':{
+			deps: ['jquery','bootstrap']
+		},
 		'bootTableExport':{
-			deps: ['jquery','bootTableCn','bootTable','tableExport']
+			deps: ['jquery','bootTable','tableExport','bootTableCn']
 		},
 		'bootTableEdit':{
-			deps: ['jquery','bootTable','bootEdit']
+			deps: ['jquery','bootTable','editable']
 		}
 	}
 });

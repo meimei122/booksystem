@@ -6,6 +6,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="resources/css/plugins/bootstrap/bootstrap.css" />
 <link rel="stylesheet" href="resources/css/plugins/jquery/jquery-ui.min.css" />
+<link type="text/css" href="resources/css/plugins/bootstrap/bootstrap-table.css" rel="stylesheet">
+<link type="text/css" href="resources/css/plugins/bootstrap/bootstrap-theme.css" rel="stylesheet">
+<link type="text/css" href="resources/css/plugins/bootstrap/bootstrap-editable.css" rel="stylesheet">
+<link type="text/css" href="resources/css/plugins/bootstrap/bootstrapValidator.min.css" rel="stylesheet">
+<link type="text/css" href="resources/css/plugins/bootstrap/select2.css" rel="stylesheet">
 <link rel="stylesheet" href="resources/css/app/menu.css">
 <link rel="stylesheet" href="resources/css/app/index.css" />
 <script type="text/javascript" src="resources/js/component/jquery/prefixfree.min.js"></script>
