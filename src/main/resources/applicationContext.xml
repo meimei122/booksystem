@@ -29,7 +29,7 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
    		<property name="dataSource" ref="dataSource"/><!-- 注入数据库连接池 -->
    		<!-- 自动扫描mappers.xml文件 -->
-   		<property name="mapperLocations" value="classpath:mapper/*.xml"/>
+   		<property name="mapperLocations" value="classpath:booksystem/mapper/*.xml"/>
    		<!-- mybatis配置文件 -->
    		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
 	</bean>
@@ -64,7 +64,7 @@
 	
 	<!-- 配置事务管理器 -->
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-       <property name="dataSource" ref="framework_dataSource" />  
+       <property name="dataSource" ref="dataSource" />  
  	</bean>  
 	<!-- 配置事务传播特性 -->
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
