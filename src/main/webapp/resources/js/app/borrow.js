@@ -21,7 +21,7 @@
 			    pagination:true,
 			    showFooter:false,
 			    sidePagination:"server",
-				columns:[[{"title": "借书表","halign": "center","align": "center","colspan": 7}
+				columns:[[{"title": "图书信息表","halign": "center","align": "center","colspan": 7}
 					],[
 			        {title: '序号',valign: "middle",align:"center",
 		          		formatter: function (value, row, index) {  

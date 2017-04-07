@@ -2,7 +2,7 @@
 	height: 23px;
     padding: 5px 0;
 }
-#borrow_center button{
+#borrow_center .columns button{
 	height: 34px;
 }
 #borrow_center .glyphicon{
