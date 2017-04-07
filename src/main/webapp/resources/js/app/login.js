@@ -54,7 +54,7 @@ $(document).ready(function() {
                         data: function(validator) {  
                               return {  
                             	  username: $('[name="username"]').val(),  
-                            	  password: $('[name="password"]').val()  
+                            	  pass: $('[name="password"]').val()  
                               };  
                            }  
                     }

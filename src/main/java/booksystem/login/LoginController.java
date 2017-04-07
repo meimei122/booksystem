@@ -36,10 +36,7 @@ public class LoginController {
 	
 	@ResponseBody
 	@RequestMapping(value = "loginCheck",method = RequestMethod.POST)
-	public String loginCheck(String username,String password){
-		Students students = null;
-		students.setUsername(username);
-		students.setPass(password);
+	public String loginCheck(Students students){
 		Students studentResult = studentService.login(students);
 		boolean result = true;
 		if(studentResult==null){

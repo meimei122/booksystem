@@ -25,8 +25,27 @@
    	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"></bean>  
 	<!-- 框架数据源配置, 使用druid连接池 -->
 	
+	<!-- 创建SqlSessionFactory，同时指定数据源 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+   		<property name="dataSource" ref="dataSource"/><!-- 注入数据库连接池 -->
+   		<!-- 自动扫描mappers.xml文件 -->
+   		<property name="mapperLocations" value="classpath:mapper/*.xml"/>
+   		<!-- mybatis配置文件 -->
+   		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
+	</bean>
+	<!-- 配置mybaits的sqlSessionFactory -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+ 			<property name="basePackage" value="booksystem.dao" />
+ 			<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+	</bean>
+	<!-- 配置事物管理器 -->	
+	<bean id="transactionManager" 
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+
 	<!-- 图书管理系统数据源配置 -->
-	<bean id="framework_dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
 		<property name="driverClassName" value="${tcmhipw.jdbc.driver}" />
 		<property name="url" value="${tcmhipw.jdbc.url}" />
 		<property name="username" value="${tcmhipw.jdbc.username}" />
