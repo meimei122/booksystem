@@ -17,7 +17,9 @@ require.config({
 		bootTableExport: 'component/bootstrap/bootstrap-table-export',
 		bootTableCn: 'component/bootstrap/bootstrap-table-zh-CN',
 		select2: 'component/bootstrap/select2',
-		tableExport: 'component/bootstrap/tableExport'
+		tableExport: 'component/bootstrap/tableExport',
+		echarts: 'component/echarts/echarts',
+		chart: 'component/echarts/chart'
 	},
 	shim: {
 		'bootstrap': {

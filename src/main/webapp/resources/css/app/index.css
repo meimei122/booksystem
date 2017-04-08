@@ -1,6 +1,12 @@
 @CHARSET "UTF-8";
-body{
-	text-align: center;
-	margin: auto;
-	overflow: hidden;
+#bookType{
+	height: 400px;
+	width: 341px; 
+}
+#borrowType{
+	height: 400px;
+	width: 341px; 
+}
+#index_content .glyphicon{
+	top: 1px;
 }
