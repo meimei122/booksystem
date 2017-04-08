@@ -28,11 +28,11 @@
 		          			return index+1;  
 		          	}},      
 			        {field:'book_isbn',title:'书号',valign: "middle",align:"center"},
-			        {field:'username',title:'书名',valign: "middle",align:"center"},
-			        {field:'borrow_time',title:'借书日期',valign: "middle",align:"center"},
-			        {field:'return_time',title:'还书日期',valign: "middle",align:"center"},
-				    {field:'whetherOutData',title:'是否超期',valign: "middle",align:"center"},
-				    {field:'pay',title:'超期应付款',valign: "middle",align:"center"}
+			        {field:'book_name',title:'书名',valign: "middle",align:"center"},
+			        {field:'book_author',title:'作者',valign: "middle",align:"center"},
+			        {field:'book_type',title:'图书类型',valign: "middle",align:"center"},
+			        {field:'book_price',title:'图书价格',valign: "middle",align:"center"},
+				    {field:'operate',title:'操作',valign: "middle",align:"center"}
 			    ]]
 			});
 	});

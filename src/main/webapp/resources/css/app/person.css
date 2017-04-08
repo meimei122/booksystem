@@ -1,0 +1,54 @@
+body{
+	text-align: center;
+	margin: auto;
+	overflow: hidden;
+}
+.person .title{
+	color: #74adaa;
+	font-size: 36px;
+    font-weight: bold;
+}
+.comInput{
+	border: 0;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    height: 60px;
+    padding-left: 8px;
+    background: transparent;
+    color: #74adaa;
+}
+/*修改input输入框中提示信息文字颜色*/
+.comInput::-webkit-input-placeholder {
+  color: #74adaa;
+}
+.comInput:-moz-placeholder {
+  color: #74adaa;
+}
+.comInput:-ms-input-placeholder {
+  color: #74adaa;
+}
+
+.buttons{
+	height: 95px;
+}
+
+.buttons button{
+	margin-top: 10px;
+	width: 48%;
+	height: 50px;
+    font-size: 25px;
+}
+
+/* 按钮样式 */
+.submit{
+    float: left;
+}
+
+.cancel{
+    float: right;
+    margin-right: -9px;
+}
+
+.personFormStyle .form-group{
+	height: 68px;
+}

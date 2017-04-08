@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="resources/css/plugins/bootstrap/bootstrap.css" />
 <link rel="stylesheet" href="resources/css/plugins/jquery/jquery-ui.min.css" />
+<link rel="stylesheet" href="resources/css/plugins/font-awesomer/font-awesome.min.css" />
 <link type="text/css" href="resources/css/plugins/bootstrap/bootstrap-table.css" rel="stylesheet">
 <link type="text/css" href="resources/css/plugins/bootstrap/bootstrap-theme.css" rel="stylesheet">
 <link type="text/css" href="resources/css/plugins/bootstrap/bootstrap-editable.css" rel="stylesheet">
