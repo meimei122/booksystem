@@ -30,6 +30,9 @@
 		
 		//首页图表部分
 		//图书信息
+		$.post("BookController/bookInfo",function(data){
+			
+		});
 		var options1 = {
 				text: '图书类型占比',
 				legendData:['计算机','社会学','小说','名著','哲学'],

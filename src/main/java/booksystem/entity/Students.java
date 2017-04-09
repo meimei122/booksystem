@@ -6,15 +6,15 @@ package booksystem.entity;
  *
  */
 public class Students {
-	private int sid;
+	private Integer sid;
 	private String username;
 	private String pass;
-	private int tel;
+	private String tel;
 	
-	public int getSid() {
+	public Integer getSid() {
 		return sid;
 	}
-	public void setSid(int sid) {
+	public void setSid(Integer sid) {
 		this.sid = sid;
 	}
 	public String getUsername() {
@@ -29,10 +29,10 @@ public class Students {
 	public void setPass(String pass) {
 		this.pass = pass;
 	}
-	public int getTel() {
+	public String getTel() {
 		return tel;
 	}
-	public void setTel(int tel) {
+	public void setTel(String tel) {
 		this.tel = tel;
 	}
 }
