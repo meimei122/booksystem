@@ -44,7 +44,7 @@
 		
 		//借书信息统计
 		var options2 = {
-				legendData: ['借书信息统计'],
+				legendData: ['借书信息'],
 				xData: ['计算机','社会学','小说','名著','哲学'],
 				seriesName: '借书信息',
 				barWidth: 20,

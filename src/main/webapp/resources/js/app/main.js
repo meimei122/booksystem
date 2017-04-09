@@ -19,7 +19,8 @@ require.config({
 		select2: 'component/bootstrap/select2',
 		tableExport: 'component/bootstrap/tableExport',
 		echarts: 'component/echarts/echarts',
-		chart: 'component/echarts/chart'
+		chart: 'component/echarts/chart',
+		paginator: 'component/bootstrap/bootstrap-paginator'
 	},
 	shim: {
 		'bootstrap': {
@@ -36,6 +37,9 @@ require.config({
 		},
 		'bootTableEdit':{
 			deps: ['jquery','bootTable','editable']
+		},
+		'paginator': {
+			deps: ['jquery','bootTable']
 		}
 	}
 });

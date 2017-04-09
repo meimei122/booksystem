@@ -3,22 +3,27 @@
  */
 (function(){
 	require(['jquery','bootstrap','bootTable','bootTableExport','bootTableEdit'],function(jquery){
-		var data;
+		var data = [{"book_isbn":"1231","book_name":"计算机基础","borrow_time":"2017-4-9","return_time":"2017-5-9","whetherOutData":"否","pay":"0"},
+		            {"book_isbn":"1231","book_name":"计算机基础","borrow_time":"2017-4-9","return_time":"2017-5-9","whetherOutData":"否","pay":"0"},
+		            {"book_isbn":"1231","book_name":"计算机基础","borrow_time":"2017-4-9","return_time":"2017-5-9","whetherOutData":"否","pay":"0"},
+		            {"book_isbn":"1231","book_name":"计算机基础","borrow_time":"2017-4-9","return_time":"2017-5-9","whetherOutData":"否","pay":"0"},
+		            {"book_isbn":"1231","book_name":"计算机基础","borrow_time":"2017-4-9","return_time":"2017-5-9","whetherOutData":"否","pay":"0"}
+		            ];
 			$("#borrowInfo_table").bootstrapTable({
 				//url: '/VenderManager/TradeList',     //请求后台的URL（*）  
 		        //method: 'post', 
 				toolbar:'#borrowInfo_toolbar',
 				data:data,
-			 	height: 400,
+			 	height: 380,
 			 	striped:true,
-			    search:true,
-			    searchOnEnterKey:true,
-			    showRefresh:true,
+			    search:false,
+			    searchOnEnterKey:false,
+			    showRefresh:false,
 			    showColumns:true,
-			    showExport:true,
-			    showPaginationSwitch:true,
+			    showExport:false,
+			    showPaginationSwitch:false,
 			    detailView:false,
-			    pagination:true,
+			    pagination:false,
 			    showFooter:false,
 			    sidePagination:"server",
 				columns:[[{"title": "已借图书信息表","halign": "center","align": "center","colspan": 7}
@@ -28,7 +33,7 @@
 		          			return index+1;  
 		          	}},      
 			        {field:'book_isbn',title:'书号',valign: "middle",align:"center"},
-			        {field:'username',title:'书名',valign: "middle",align:"center"},
+			        {field:'book_name',title:'书名',valign: "middle",align:"center"},
 			        {field:'borrow_time',title:'借书日期',valign: "middle",align:"center"},
 			        {field:'return_time',title:'还书日期',valign: "middle",align:"center"},
 				    {field:'whetherOutData',title:'是否超期',valign: "middle",align:"center"},
