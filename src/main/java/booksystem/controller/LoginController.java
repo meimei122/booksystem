@@ -90,6 +90,12 @@ public class LoginController {
         return resultString;  
     }  
 
+	@RequestMapping(value = "userInfo", method = RequestMethod.POST)
+	public String userInfo(Students students){
+		Students studentResult = studentService.login(students);
+		return "";
+	}
+	
 	/**
 	 * 注册页面
 	 * @param model

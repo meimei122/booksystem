@@ -12,7 +12,7 @@ import booksystem.service.BookService;
 
 @Service("bookService")
 public class BookServiceImpl implements BookService {
-	@Resource()
+	@Resource
 	private BookDao bookDao;
 	
 	@Override

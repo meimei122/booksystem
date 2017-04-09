@@ -10,8 +10,12 @@
 		<result property = "book_isbn" column = "book_isbn" />
 	</resultMap>
 	
-	<select id="borrowInfo" parameterType="BorrowBook" resultMap="BorrowBookResultMap">
+	<select id="borrowInfo" resultMap="BorrowBookResultMap">
 		select * from borrwbook bb, book b WHERE bb.book_isbn = b.book_isbn
+	</select>
+	
+	<select id="borrowBook" parameterType="BorrowBook" resultMap="BorrowBookResultMap">
+		select * from borrwbook WHERE sid = #{sid}
 	</select>
 	
 </mapper>
