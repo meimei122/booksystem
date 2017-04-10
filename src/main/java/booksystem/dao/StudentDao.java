@@ -1,5 +1,7 @@
 package booksystem.dao;
 
+import java.util.List;
+
 import booksystem.entity.Students;
 
 public interface StudentDao {
@@ -16,6 +18,8 @@ public interface StudentDao {
 	 * @return
 	 */
 	public Students userName(Students students);
+	
+	public List<Students> selectSid();
 	
 	/**
 	 * 注册页面dao层

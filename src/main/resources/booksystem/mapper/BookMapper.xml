@@ -13,7 +13,10 @@
 	</resultMap>
 	
 	<select id="bookInfo" resultMap="BookResultMap">
-		select * from book 
+		select  book_type,sum(book_totalnum) as book_totalnum  from book group by book_type
 	</select>
 		
+	<select id="bookType" resultMap="BookResultMap">
+		select  book_type from book
+	</select>
 </mapper>

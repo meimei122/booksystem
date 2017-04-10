@@ -17,4 +17,7 @@
 		select * from student where username=#{username}
 	</select>
 	
+	<select id="selectSid" resultMap="StudentsResultMap">
+		select sid from student
+	</select>
 </mapper>

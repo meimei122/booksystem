@@ -12,4 +12,6 @@ public interface BookDao {
 	 */
 	public List<Book> bookInfo();
 	
+	
+	public List<Book> bookType();
 }

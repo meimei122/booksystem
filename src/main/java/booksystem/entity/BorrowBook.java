@@ -1,13 +1,14 @@
 package booksystem.entity;
 
-import com.mysql.fabric.xmlrpc.base.Data;
+import java.util.Date;
 
 public class BorrowBook {
 	private Integer bid;
-	private Data borrow_time;
-	private Data return_time;
-	private Integer sid;
-	private Integer book_isbn;
+	private Date borrow_time;
+	private Date return_time;
+	private Integer borrow_num;
+	private Book book;
+	private Students students;
 	
 	public Integer getBid() {
 		return bid;
@@ -15,28 +16,34 @@ public class BorrowBook {
 	public void setBid(Integer bid) {
 		this.bid = bid;
 	}
-	public Data getBorrow_time() {
+	public Date getBorrow_time() {
 		return borrow_time;
 	}
-	public void setBorrow_time(Data borrow_time) {
+	public void setBorrow_time(Date borrow_time) {
 		this.borrow_time = borrow_time;
 	}
-	public Data getReturn_time() {
+	public Date getReturn_time() {
 		return return_time;
 	}
-	public void setReturn_time(Data return_time) {
+	public void setReturn_time(Date return_time) {
 		this.return_time = return_time;
 	}
-	public Integer getSid() {
-		return sid;
+	public Integer getBorrow_num() {
+		return borrow_num;
 	}
-	public void setSid(Integer sid) {
-		this.sid = sid;
+	public void setBorrow_num(Integer borrow_num) {
+		this.borrow_num = borrow_num;
 	}
-	public Integer getBook_isbn() {
-		return book_isbn;
+	public Book getBook() {
+		return book;
 	}
-	public void setBook_isbn(Integer book_isbn) {
-		this.book_isbn = book_isbn;
+	public void setBook(Book book) {
+		this.book = book;
+	}
+	public Students getStudents() {
+		return students;
+	}
+	public void setStudents(Students students) {
+		this.students = students;
 	}
 }
