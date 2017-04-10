@@ -2,8 +2,14 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+	<settings>
+        <!-- 打印查询语句 -->
+        <setting name="logImpl" value="STDOUT_LOGGING" />
+    </settings>
+    
 	<!--起别名  -->
 	<typeAliases>
 		<package name="booksystem.entity"/>
 	</typeAliases>
+	
 </configuration>

@@ -18,6 +18,6 @@
 	</select>
 	
 	<select id="selectSid" resultMap="StudentsResultMap">
-		select sid from student
+		select sid from student group by sid
 	</select>
 </mapper>

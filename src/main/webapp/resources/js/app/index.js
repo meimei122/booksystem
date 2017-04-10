@@ -31,7 +31,6 @@
 		//首页图表部分
 		//图书信息
 		$.post("BookController/bookInfo",function(data){
-			debugger;
 			var	options1 = {
 					text: '图书类型占比',
 					legendData:['计算机','社会学','小说','名著','哲学'],
@@ -42,7 +41,7 @@
 		});
 		
 		//借书信息统计
-		$.post("BookController/bookInfo",function(data){
+		$.post("BorrowBookController/borrowBookInfo",function(data){
 			debugger;
 			var options2 = {
 					legendData: ['借书信息'],

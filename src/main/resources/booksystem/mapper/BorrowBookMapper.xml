@@ -19,5 +19,5 @@
 	<select id="borrowBook" parameterType="BorrowBook" resultMap="BorrowBookResultMap">
 		select * from borrwbook WHERE sid = #{sid}
 	</select>
-	
+
 </mapper>

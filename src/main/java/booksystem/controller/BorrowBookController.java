@@ -23,11 +23,13 @@ public class BorrowBookController {
 	
 	@ResponseBody
 	@RequestMapping(value = "borrowBookInfo", method = RequestMethod.POST)
-	public String borrowBook() {
+	public List borrowBook() {
 		List<String> xDataList = new ArrayList<String>();
 		List<String> numList = new ArrayList<String>();
+		List total = new ArrayList<>();
 		List<BorrowBook> borrowBooks = borrowBookService.borrowInfo();
-		
-		return "";
+		total.add(xDataList);
+		total.add(numList);
+		return total;
 	}
 }

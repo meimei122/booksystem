@@ -17,6 +17,6 @@
 	</select>
 		
 	<select id="bookType" resultMap="BookResultMap">
-		select  book_type from book
+		select  book_type from book group by book_type
 	</select>
 </mapper>
