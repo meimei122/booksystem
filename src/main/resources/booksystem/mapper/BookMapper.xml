@@ -7,7 +7,7 @@
 		<result property = "book_name" column = "book_name" />
 		<result property = "book_price" column = "book_price" />
 		<result property = "book_type" column = "book_type" />
-		<result property = "booK_author" column = "booK_author" />
+		<result property = "book_author" column = "book_author" />
 		<result property = "book_totalnum" column = "book_totalnum" />
 		<result property = "book_avanum" column = "book_avanum" />
 	</resultMap>
@@ -19,4 +19,9 @@
 	<select id="bookType" resultMap="BookResultMap">
 		select  book_type from book group by book_type
 	</select>
+	
+	<select id="book" resultMap="BookResultMap">
+		select  book_isbn,book_name,book_author,book_type,book_price,book_avanum from book
+	</select>
+	
 </mapper>

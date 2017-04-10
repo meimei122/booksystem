@@ -1,7 +1,9 @@
 package booksystem.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -9,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.alibaba.fastjson.JSON;
 
 import booksystem.entity.Book;
 import booksystem.entity.UtilEntity;
@@ -47,5 +51,12 @@ public class BookController {
 		list4.setValue(bookList.get(4).getBook_totalnum());
 		utilList.add(list4);
 		return utilList;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "book",method = RequestMethod.POST)
+	public List<Book> book() {
+		List<Book> bookList = bookService.book();
+		return bookList;
 	}
 }

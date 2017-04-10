@@ -7,17 +7,20 @@
 		<result property = "borrow_time"  column = "borrow_time" />
 		<result property = "return_time"  column = "return_time" />
 		<result property = "borrow_num" column = "borrow_num" />
-		<result property = "borrow_num" column = "borrow_num" />
-		<association property="book"  column="book_type" select="booksystem.dao.BookDao.bookType" />  
-		<association property="students"  column="sid" select="booksystem.dao.StudentDao.selectSid" />  
+		<result property = "sid" column = "sid" />
+		<result property = "book_type" column = "book_type" />
 	</resultMap>
 	
 	<select id="borrowInfo" resultMap="BorrowBookResultMap">
-		select b.book_type,SUM(bb.borrow_num) as borrow_num from borrwbook bb, book b WHERE bb.book_isbn = b.book_isbn GROUP BY b.book_type
+		select book_type,SUM(borrow_num) as borrow_num from borrwbook GROUP BY book_type
 	</select>
 	
 	<select id="borrowBook" parameterType="BorrowBook" resultMap="BorrowBookResultMap">
 		select * from borrwbook WHERE sid = #{sid}
 	</select>
 
+	<!-- <insert id="addBorrow" parameterType="BorrowBook" >
+         into borrwbook (borrow_time,return_time,sid,book_isbn,borrow_num) values (#{borrow_time},#{return_time},#{sid},#{book_isbn},1)
+    </insert > -->
+	
 </mapper>

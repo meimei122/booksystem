@@ -7,8 +7,8 @@ public class BorrowBook {
 	private Date borrow_time;
 	private Date return_time;
 	private Integer borrow_num;
-	private Book book;
-	private Students students;
+	private Integer sid;
+	private String book_type;
 	
 	public Integer getBid() {
 		return bid;
@@ -34,16 +34,17 @@ public class BorrowBook {
 	public void setBorrow_num(Integer borrow_num) {
 		this.borrow_num = borrow_num;
 	}
-	public Book getBook() {
-		return book;
+	public Integer getSid() {
+		return sid;
 	}
-	public void setBook(Book book) {
-		this.book = book;
+	public void setSid(Integer sid) {
+		this.sid = sid;
 	}
-	public Students getStudents() {
-		return students;
+	public String getBook_type() {
+		return book_type;
 	}
-	public void setStudents(Students students) {
-		this.students = students;
+	public void setBook_type(String book_type) {
+		this.book_type = book_type;
 	}
+
 }

@@ -4,7 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import org.apache.shiro.web.session.HttpServletSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,7 +45,7 @@ public class LoginController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "checkPass",method = RequestMethod.POST)
-	public String checkPass(Students students){
+	public String checkPass(Students students,HttpServletRequest request){
 		Students studentResult = studentService.login(students);
 		boolean result = true;
 		if(studentResult==null){
@@ -49,6 +53,7 @@ public class LoginController {
 		}
 		else{
 			result = true;
+			request.getSession().setAttribute("students", studentResult);
 		}
         Map<String, Boolean> map = new HashMap<>();  
         map.put("valid", result);  

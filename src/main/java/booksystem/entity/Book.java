@@ -5,7 +5,7 @@ public class Book {
 	private String book_name;
 	private Double book_price;
 	private String book_type;
-	private String booK_author;
+	private String book_author;
 	private Integer book_totalnum;
 	private Integer book_avanum;
 	
@@ -33,12 +33,6 @@ public class Book {
 	public void setBook_type(String book_type) {
 		this.book_type = book_type;
 	}
-	public String getBooK_author() {
-		return booK_author;
-	}
-	public void setBooK_author(String booK_author) {
-		this.booK_author = booK_author;
-	}
 	public Integer getBook_totalnum() {
 		return book_totalnum;
 	}
@@ -50,5 +44,11 @@ public class Book {
 	}
 	public void setBook_avanum(Integer book_avanum) {
 		this.book_avanum = book_avanum;
+	}
+	public String getBook_author() {
+		return book_author;
+	}
+	public void setBook_author(String book_author) {
+		this.book_author = book_author;
 	}
 }

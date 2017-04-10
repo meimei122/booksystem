@@ -3,22 +3,9 @@
  */
 (function(){
 	require(['jquery','bootstrap','bootTable','paginator'],function(jquery){
-		var data = [{"book_isbn":"1231","book_name":"计算机基础","book_author":"李白","book_type":"计算机","book_price":"80","book_avanum":"9"},
-		            {"book_isbn":"1231","book_name":"计算机基础","book_author":"李白","book_type":"计算机","book_price":"80","book_avanum":"9"},
-		            {"book_isbn":"1231","book_name":"计算机基础","book_author":"李白","book_type":"计算机","book_price":"80","book_avanum":"9"},
-		            {"book_isbn":"1231","book_name":"计算机基础","book_author":"李白","book_type":"计算机","book_price":"80","book_avanum":"9"},
-		            {"book_isbn":"1231","book_name":"计算机基础","book_author":"李白","book_type":"计算机","book_price":"80","book_avanum":"9"},
-		            {"book_isbn":"1231","book_name":"计算机基础","book_author":"李白","book_type":"计算机","book_price":"80","book_avanum":"9"}];
-			
-		window.operateEvents = {
-		        'click .like': function (e, value, row, index) {
-		            alert('You click like action, row: ' + JSON.stringify(row));
-		        }
-		    };
-		
+		$.post("BookController/book",function(data){
+			var data = data;
 			$("#borrow_table").bootstrapTable({
-				//url: '/VenderManager/TradeList',     //请求后台的URL（*）  
-		        //method: 'post', 
 				toolbar:'#borrow_toolbar',
 				data:data,
 			 	height: 380,
@@ -56,7 +43,14 @@
 			            }
 			    ]]
 			});
-			
+		});
+		
+		window.operateEvents = {
+		        'click .like': function (e, value, row, index) {
+		            alert('You click like action, row: ' + row.book_isbn);
+		        }
+		    };
+		
 			$(window).resize(function () {
 	        	$("#borrow_table").bootstrapTable('resetView', {
 	                //height: cUtil.getHeight($('.index-center-panel'),88)

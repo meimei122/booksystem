@@ -42,19 +42,16 @@
 		
 		//借书信息统计
 		$.post("BorrowBookController/borrowBookInfo",function(data){
-			debugger;
 			var options2 = {
 					legendData: ['借书信息'],
-					xData: ['名著','计算机','社会学','小说','哲学'],
+					xData: data[0],
 					seriesName: '借书信息',
 					barWidth: 20,
-					seriesData: [11,9,15,13,5],
+					seriesData: data[1],
 					chartWrapperId: 'borrowType'
 				};
 			chart.barPoint(options2);
 		});
-		
-		//日历部分
 		
 	});
 })();
