@@ -15,10 +15,6 @@
 	<select id="bookInfo" resultMap="BookResultMap">
 		select  book_type,sum(book_totalnum) as book_totalnum  from book group by book_type
 	</select>
-		
-	<select id="bookType" resultMap="BookResultMap">
-		select  book_type from book group by book_type
-	</select>
 	
 	<select id="book" resultMap="BookResultMap">
 		select  book_isbn,book_name,book_author,book_type,book_price,book_avanum from book

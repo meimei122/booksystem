@@ -3,15 +3,16 @@
  */
 (function(){
 	require(['jquery','bootstrap','bootTable','bootTableExport','bootTableEdit'],function(jquery){
-		var data = [{"book_isbn":"1231","book_name":"计算机基础","borrow_time":"2017-4-9","return_time":"2017-5-9","whetherOutData":"否","pay":"0"},
-		            {"book_isbn":"1231","book_name":"计算机基础","borrow_time":"2017-4-9","return_time":"2017-5-9","whetherOutData":"否","pay":"0"},
-		            {"book_isbn":"1231","book_name":"计算机基础","borrow_time":"2017-4-9","return_time":"2017-5-9","whetherOutData":"否","pay":"0"},
-		            {"book_isbn":"1231","book_name":"计算机基础","borrow_time":"2017-4-9","return_time":"2017-5-9","whetherOutData":"否","pay":"0"},
-		            {"book_isbn":"1231","book_name":"计算机基础","borrow_time":"2017-4-9","return_time":"2017-5-9","whetherOutData":"否","pay":"0"}
-		            ];
+//		var data = [{"book_isbn":"1231","book_name":"计算机基础","borrow_time":"2017-4-9","return_time":"2017-5-9","whetherOutData":"否","pay":"0"},
+//		            {"book_isbn":"1231","book_name":"计算机基础","borrow_time":"2017-4-9","return_time":"2017-5-9","whetherOutData":"否","pay":"0"},
+//		            {"book_isbn":"1231","book_name":"计算机基础","borrow_time":"2017-4-9","return_time":"2017-5-9","whetherOutData":"否","pay":"0"},
+//		            {"book_isbn":"1231","book_name":"计算机基础","borrow_time":"2017-4-9","return_time":"2017-5-9","whetherOutData":"否","pay":"0"},
+//		            {"book_isbn":"1231","book_name":"计算机基础","borrow_time":"2017-4-9","return_time":"2017-5-9","whetherOutData":"否","pay":"0"}
+//		            ];
+		$.post("BorrowBookController/borrowBook",{sid:201401},function(data){
+			debugger;
+			var data = data;
 			$("#borrowInfo_table").bootstrapTable({
-				//url: '/VenderManager/TradeList',     //请求后台的URL（*）  
-		        //method: 'post', 
 				toolbar:'#borrowInfo_toolbar',
 				data:data,
 			 	height: 380,
@@ -40,5 +41,6 @@
 				    {field:'pay',title:'超期应付款',valign: "middle",align:"center"}
 			    ]]
 			});
+		});
 	});
 })();

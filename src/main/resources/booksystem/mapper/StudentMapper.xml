@@ -16,8 +16,5 @@
 	<select id="userName" parameterType="Students" resultMap="StudentsResultMap">
 		select * from student where username=#{username}
 	</select>
-	
-	<select id="selectSid" resultMap="StudentsResultMap">
-		select sid from student group by sid
-	</select>
+
 </mapper>

@@ -7,13 +7,14 @@ import booksystem.entity.Book;
 public interface BookDao {
 	
 	/**
-	 * 查询书记信息
+	 * 首页图书信息统计
 	 * @return
 	 */
 	public List<Book> bookInfo();
 	
-	
-	public List<Book> bookType();
-	
+	/**
+	 * 图书信息统计给用户借书使用
+	 * @return
+	 */
 	public List<Book> book();
 }

@@ -19,8 +19,6 @@ public interface StudentDao {
 	 */
 	public Students userName(Students students);
 	
-	public List<Students> selectSid();
-	
 	/**
 	 * 注册页面dao层
 	 * @param students

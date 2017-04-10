@@ -26,7 +26,7 @@ public class BorrowBookController {
 	
 	@ResponseBody
 	@RequestMapping(value = "borrowBookInfo", method = RequestMethod.POST)
-	public List borrowBook() {
+	public List borrowBookInfo() {
 		List<String> xDataList = new ArrayList<String>();
 		List numList = new ArrayList<String>();
 		List total = new ArrayList<>();
@@ -51,5 +51,14 @@ public class BorrowBookController {
 			
 		}
 		return "";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "borrowBook", method = RequestMethod.POST)
+	public List<BorrowBook> borrowBook(BorrowBook borrowBook){
+		
+		List<BorrowBook> borrowBooks = borrowBookService.borrowBook(borrowBook);
+		
+		return borrowBooks;
 	}
 }
