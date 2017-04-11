@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import booksystem.entity.BorrowBook;
 import booksystem.entity.Students;
-import booksystem.entity.UtilEntity;
 import booksystem.service.BorrowBookService;
 
 @Controller
@@ -56,9 +54,21 @@ public class BorrowBookController {
 	@ResponseBody
 	@RequestMapping(value = "borrowBook", method = RequestMethod.POST)
 	public List<BorrowBook> borrowBook(BorrowBook borrowBook){
-		
 		List<BorrowBook> borrowBooks = borrowBookService.borrowBook(borrowBook);
-		
+		for(int i = 0;i < borrowBooks.size();i++){
+			int outData = Integer.parseInt(borrowBooks.get(i).getOutDate());
+			double pay = 0;
+			if(outData>0){
+				pay = outData*0.5;
+				borrowBooks.get(i).setOutDate("是");
+				borrowBooks.get(i).setOutDateNum(outData+" 天");
+				borrowBooks.get(i).setPay(pay+"元");
+			}else{
+				borrowBooks.get(i).setOutDate("否");
+				borrowBooks.get(i).setOutDateNum("0 天");
+				borrowBooks.get(i).setPay(pay+"元");
+			}
+		}
 		return borrowBooks;
 	}
 }

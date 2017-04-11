@@ -4,19 +4,23 @@
 <mapper namespace="booksystem.dao.BorrowBookDao">
 	<resultMap type = "BorrowBook" id = "BorrowBookResultMap">
 		<id property = "bid" column = "bid" />
-		<result property = "borrow_time"  column = "borrow_time" />
-		<result property = "return_time"  column = "return_time" />
+		<result property = "borrow_time" column = "borrow_time" />
+		<result property = "return_time" column = "return_time" />
 		<result property = "borrow_num" column = "borrow_num" />
 		<result property = "sid" column = "sid" />
 		<result property = "book_type" column = "book_type" />
+		<result property = "book_isbn" column = "book_isbn" />
+		<result property = "book_name" column = "book_name" />
+		<result property = "outDate" column = "outDate" />
 	</resultMap>
+	<sql id="column">date_format(borrow_time, '%Y-%m-%d') as borrow_time,date_format(return_time, '%Y-%m-%d')  as return_time,book_type,borrow_num,book_isbn,book_name,datediff(date_format(NOW(),'%Y-%m-%d'),date_format(return_time, '%Y-%m-%d')) as outDate</sql>
 	
 	<select id="borrowInfo" resultMap="BorrowBookResultMap">
 		select book_type,SUM(borrow_num) as borrow_num from borrwbook GROUP BY book_type
 	</select>
 	
 	<select id="borrowBook" parameterType="BorrowBook" resultMap="BorrowBookResultMap">
-		select * from borrwbook WHERE sid = #{sid}
+		select <include refid="column"></include>  from borrwbook WHERE sid = #{sid}
 	</select>
 
 	<!-- <insert id="addBorrow" parameterType="BorrowBook" >

@@ -95,6 +95,11 @@ public class LoginController {
         return resultString;  
     }  
 
+	/**
+	 * 获取当前用户信息
+	 * @param students
+	 * @return
+	 */
 	@RequestMapping(value = "userInfo", method = RequestMethod.POST)
 	public String userInfo(Students students){
 		Students studentResult = studentService.login(students);
