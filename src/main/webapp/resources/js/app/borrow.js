@@ -1,13 +1,20 @@
 /**
  * 借书页面js
+ * 请求服务器数据时，你可以通过重写参数的方式添加一些额外的参数，例如 toolbar 中的参数 如果 queryParamsType = 'limit' ,返回参数必须包含
+limit, offset, search, sort, order 否则, 需要包含: 
+pageSize, pageNumber, searchText, sortName, sortOrder. 
+返回false将会终止请求
  */
 (function(){
 	require(['jquery','bootstrap','bootTable'],function(jquery){
-		$.post("BookController/book",function(data){
-			var data = data;
+		window.operateEvents = {
+		        'click .like': function (e, value, row, index) {
+		            alert('You click like action, row: ' + row.book_isbn);
+		        }
+		    };
 			$("#borrow_table").bootstrapTable({
 				toolbar:'#borrow_toolbar',
-				data:data,
+				url:"BookController/book",
 			 	height: 380,
 			 	striped:true,
 			    search:true,
@@ -18,10 +25,6 @@
 			    pageList:[5,10,15,20],
 				columns:[[{"title": "图书信息表","halign": "center","align": "center","colspan": 8}
 					],[
-			        {title: '序号',valign: "middle",align:"center",
-		          		formatter: function (value, row, index) {  
-		          			return index+1;  
-		          	}},      
 			        {field:'book_isbn',title:'书号',valign: "middle",align:"center"},
 			        {field:'book_name',title:'书名',valign: "middle",align:"center"},
 			        {field:'book_author',title:'作者',valign: "middle",align:"center"},
@@ -39,18 +42,5 @@
 			            }
 			    ]]
 			});
-		});
-		
-		window.operateEvents = {
-		        'click .like': function (e, value, row, index) {
-		            alert('You click like action, row: ' + row.book_isbn);
-		        }
-		    };
-		
-			$(window).resize(function () {
-	        	$("#borrow_table").bootstrapTable('resetView', {
-	                //height: cUtil.getHeight($('.index-center-panel'),88)
-	            });
-	        });
 	});
 })();

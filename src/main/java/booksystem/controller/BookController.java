@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 
 import booksystem.entity.Book;
 import booksystem.entity.UtilEntity;
@@ -54,9 +56,15 @@ public class BookController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "book",method = RequestMethod.POST)
-	public List<Book> book() {
-		List<Book> bookList = bookService.book();
-		return bookList;
+	@RequestMapping(value = "book",method = RequestMethod.GET)
+	public String book(Integer limit,Integer offset) {
+		String data = null;
+		Page<Book> page = PageHelper.offsetPage(offset, limit);
+		bookService.book();
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("rows", page.getResult());
+		map.put("total", page.getTotal());
+		data = JSON.toJSONString(map);
+		return data;
 	}
 }

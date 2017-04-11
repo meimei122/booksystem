@@ -9,9 +9,7 @@
 <link rel="stylesheet" href="resources/css/plugins/font-awesomer/font-awesome.min.css" />
 <link type="text/css" href="resources/css/plugins/bootstrap/bootstrap-table.css" rel="stylesheet">
 <link type="text/css" href="resources/css/plugins/bootstrap/bootstrap-theme.css" rel="stylesheet">
-<link type="text/css" href="resources/css/plugins/bootstrap/bootstrap-editable.css" rel="stylesheet">
 <link type="text/css" href="resources/css/plugins/bootstrap/bootstrapValidator.min.css" rel="stylesheet">
-<link type="text/css" href="resources/css/plugins/bootstrap/select2.css" rel="stylesheet">
 <link rel="stylesheet" href="resources/css/app/menu.css">
 <link rel="stylesheet" href="resources/css/app/index.css" />
 <link rel="stylesheet" href="resources/css/plugins/calender/calendar.css">
