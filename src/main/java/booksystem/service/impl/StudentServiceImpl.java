@@ -25,4 +25,15 @@ public class StudentServiceImpl implements StudentService {
 		return studentDao.userName(students);
 	}
 
+	@Override
+	public Students loginInfo(Students students) {
+		// TODO Auto-generated method stub
+		return studentDao.loginInfo(students);
+	}
+
+	@Override
+	public int updateUser(Students students) {
+		// TODO Auto-generated method stub
+		return studentDao.updateUser(students);
+	}
 }

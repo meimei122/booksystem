@@ -11,16 +11,10 @@ require.config({
 		html5shiv: 'component/bootstrap/html5shiv.min',
 		respond: 'component/bootstrap/respond',
 		bootstrapValidator: 'component/bootstrap/bootstrapValidator.min',
-		editable: 'component/bootstrap/bootstrap-editable',
-		bootTable: 'component/bootstrap/bootstrap-table',
-		bootTableEdit: 'component/bootstrap/bootstrap-table-editable',
-		bootTableExport: 'component/bootstrap/bootstrap-table-export',
+		bootTable: 'component/bootstrap/bootstrap-table.min',
 		bootTableCn: 'component/bootstrap/bootstrap-table-zh-CN',
-		select2: 'component/bootstrap/select2',
-		tableExport: 'component/bootstrap/tableExport',
 		echarts: 'component/echarts/echarts',
-		chart: 'component/echarts/chart',
-		paginator: 'component/bootstrap/bootstrap-paginator'
+		chart: 'component/echarts/chart'
 	},
 	shim: {
 		'bootstrap': {
@@ -31,15 +25,6 @@ require.config({
 		},
 		'bootTableCn':{
 			deps: ['jquery','bootstrap']
-		},
-		'bootTableExport':{
-			deps: ['jquery','bootTable','tableExport','bootTableCn']
-		},
-		'bootTableEdit':{
-			deps: ['jquery','bootTable','editable']
-		},
-		'paginator': {
-			deps: ['jquery','bootTable']
 		}
 	}
 });

@@ -25,4 +25,18 @@ public interface StudentDao {
 	 * @return
 	 */
 	public int register(Students students);
+	
+	/**
+	 * 获取当前用户信息
+	 * @param students
+	 * @return
+	 */
+	public Students loginInfo(Students students);
+	
+	/**
+	 * 修改用户信息
+	 * @param students
+	 * @return
+	 */
+	public int updateUser(Students students);
 }

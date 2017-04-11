@@ -2,7 +2,7 @@
  * 借书页面js
  */
 (function(){
-	require(['jquery','bootstrap','bootTable','paginator'],function(jquery){
+	require(['jquery','bootstrap','bootTable'],function(jquery){
 		$.post("BookController/book",function(data){
 			var data = data;
 			$("#borrow_table").bootstrapTable({
@@ -11,15 +11,11 @@
 			 	height: 380,
 			 	striped:true,
 			    search:true,
-			    searchOnEnterKey:true,
-			    showRefresh:false,//刷新
 			    showColumns:true,//显示字段
-			    showExport:false,//是否显示导出
-			    showPaginationSwitch:false,
-			    detailView:false,
 			    pagination:true,//底部数据信息
-			    showFooter:false,
 			    sidePagination:"server",
+			    pageSize:5,
+			    pageList:[5,10,15,20],
 				columns:[[{"title": "图书信息表","halign": "center","align": "center","colspan": 8}
 					],[
 			        {title: '序号',valign: "middle",align:"center",

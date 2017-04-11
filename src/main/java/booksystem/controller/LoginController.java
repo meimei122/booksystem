@@ -100,10 +100,33 @@ public class LoginController {
 	 * @param students
 	 * @return
 	 */
+	@ResponseBody
 	@RequestMapping(value = "userInfo", method = RequestMethod.POST)
-	public String userInfo(Students students){
-		Students studentResult = studentService.login(students);
-		return "";
+	public Students userInfo(Students students){
+		Students studentResult = studentService.loginInfo(students);
+		return studentResult;
+	}
+	
+	/**
+	 * 修改用户信息
+	 * @param students
+	 * @return
+	 */
+	
+	@RequestMapping(value = "updateUser", method = RequestMethod.POST)
+	public String updateUser(String phone,String nowPassword) {
+		Students students = new Students();
+		students.setSid(201401);
+		students.setTel(phone);
+		students.setPass(nowPassword);
+		
+		int i = studentService.updateUser(students);
+		if(i>0){
+			return "app/login"; 
+		}else{
+			return "app/index";
+		}
+		
 	}
 	
 	/**

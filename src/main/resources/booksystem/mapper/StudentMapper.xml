@@ -16,5 +16,12 @@
 	<select id="userName" parameterType="Students" resultMap="StudentsResultMap">
 		select * from student where username=#{username}
 	</select>
-
+	
+	<select id="loginInfo" parameterType="Students" resultMap="StudentsResultMap">
+		select * from student where sid=#{sid}
+	</select>
+	
+	<update id="updateUser" parameterType="Students">
+		 update student set tel = #{tel},spass = #{pass} where username=#{username}
+	</update>
 </mapper>

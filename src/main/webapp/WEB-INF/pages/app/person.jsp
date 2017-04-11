@@ -13,7 +13,7 @@
 		<div class="col-lg-3"></div>
 		<div class="col-lg-6 person">
 			<h2 class="title">个 人 信 息</h2>
-			<form id="personForm" class="personFormStyle" action="">
+			<form id="personForm" class="personFormStyle" action="updateUser" method="post">
 				<div class="form-group">
 					<input type="text" class="comInput" id="username" name="username" placeholder="用户名" disabled/>
 				</div>
