@@ -13,6 +13,10 @@ require.config({
 		bootstrapValidator: 'component/bootstrap/bootstrapValidator.min',
 		bootTable: 'component/bootstrap/bootstrap-table.min',
 		bootTableCn: 'component/bootstrap/bootstrap-table-zh-CN',
+		tableExport:'component/bootstrap/tableExport',
+		bootTableEdit:'component/bootstrap/bootstrap-table-editable',
+		bootEdit:'component/bootstrap/bootstrap-editable',
+		select2:'component/bootstrap/select2',
 		echarts: 'component/echarts/echarts',
 		chart: 'component/echarts/chart'
 	},
@@ -25,6 +29,12 @@ require.config({
 		},
 		'bootTableCn':{
 			deps: ['jquery','bootstrap']
+		},
+		'bootTableExport':{
+			deps: ['jquery','bootTable','tableExport','bootTableCn']
+		},
+		'bootTableEdit':{
+			deps: ['jquery','bootTable','bootEdit']
 		}
 	}
 });
