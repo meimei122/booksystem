@@ -12,7 +12,7 @@
 <link type="text/css" href="resources/css/plugins/bootstrap/bootstrapValidator.min.css" rel="stylesheet">
 <link type="text/css" href="resources/css/plugins/bootstrap/select2.css" rel="stylesheet"/>
 <link type="text/css" href="resources/css/plugins/bootstrap/bootstrap-editable.css" rel="stylesheet"/>
-<link rel="stylesheet" href="resources/css/app/menu.css">
+<link rel="stylesheet" href="resources/css/app/menu.css" />
 <link rel="stylesheet" href="resources/css/app/index.css" />
 <link rel="stylesheet" href="resources/css/plugins/calender/calendar.css">
 <script type="text/javascript" src="resources/js/component/jquery/jquery-1.9.1.js"></script>
