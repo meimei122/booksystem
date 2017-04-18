@@ -177,6 +177,7 @@
 		</dependency>
 		<!-- jstl end -->
 		
+		<!-- fastjson -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>

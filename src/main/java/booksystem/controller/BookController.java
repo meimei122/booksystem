@@ -57,7 +57,7 @@ public class BookController {
 	
 	@ResponseBody
 	@RequestMapping(value = "book",method = RequestMethod.GET)
-	public String book(Integer limit,Integer offset) {
+	public String book(Book book,Integer limit,Integer offset) {
 		String data = null;
 		Page<Book> page = PageHelper.offsetPage(offset, limit);
 		bookService.book();
