@@ -11,6 +11,12 @@
 <body>
 	<div id="borrow_center">
 		<div id="borrow_toolbar">
+			<div id="query" class="query_div">
+				<input id="book_isbn"  class="booknum" placeholder=" 书 号"/>
+				<input id="book_name"  class="bookname" placeholder=" 书 名"/>
+				<input id="book_type" class="booktype" placeholder=" 类 型"/>
+				<button type="button" class="btn btn-info" id="querybtn">查 询</button>
+			</div>
 	    </div>
 		<table id="borrow_table">
 	    </table>

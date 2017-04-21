@@ -17,7 +17,7 @@ pageSize, pageNumber, searchText, sortName, sortOrder.
 				url:"BookController/book",
 			 	height: 380,
 			 	striped:true,
-			    search:true,
+			    search:false,
 			    showColumns:true,//显示字段
 			    pagination:true,//底部数据信息
 			    sidePagination:"server",
@@ -42,5 +42,13 @@ pageSize, pageNumber, searchText, sortName, sortOrder.
 			            }
 			    ]]
 			});
+			
+		//带参数查询	
+		$("#querybtn").on('click',function(){
+			var book_isbn = $("#book_isbn").val(),
+				book_name = $("#book_name").val(),
+				book_type = $("#book_type").val();
+			$("#borrow_table").bootstrapTable('refresh', {url: "BookController/book?book_isbn="+book_isbn+"&book_name="+book_name+"&book_type="+book_type});
+		});
 	});
 })();

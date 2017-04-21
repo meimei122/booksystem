@@ -16,8 +16,19 @@
 		select  book_type,sum(book_totalnum) as book_totalnum  from book group by book_type
 	</select>
 	
-	<select id="book" resultMap="BookResultMap">
+	<select id="book" resultMap="BookResultMap" parameterType="Book">
 		select  book_isbn,book_name,book_author,book_type,book_price,book_avanum from book
+		<where>  
+	        <if test="book_isbn!=null and book_isbn!='' ">  
+	            book_isbn LIKE CONCAT(CONCAT('%', #{book_isbn}),'%') 
+	        </if>  
+	        <if test="book_name!=null and book_name!='' ">  
+	             and book_name LIKE CONCAT(CONCAT('%', #{book_name}),'%') 
+	        </if>
+	        <if test="book_type!=null and book_type!='' ">  
+	             and book_type LIKE CONCAT(CONCAT('%', #{book_type}),'%') 
+	        </if>
+	    </where>
 	</select>
 	
 </mapper>

@@ -16,5 +16,5 @@ public interface BookDao {
 	 * 图书信息统计给用户借书使用
 	 * @return
 	 */
-	public List<Book> book();
+	public List<Book> book(Book book);
 }

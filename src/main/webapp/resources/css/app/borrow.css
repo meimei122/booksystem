@@ -8,3 +8,16 @@
 #borrow_center .glyphicon{
 	top: 1px;
 }
+.query_div{
+	margin-left: 17px;
+}
+.bookname{
+	margin: 13px;
+}
+.booktype{
+	margin-right: 15px;
+}
+.query_div input{
+	border-radius: 5px;
+    height: 28px;
+}

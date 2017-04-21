@@ -10,6 +10,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
@@ -57,10 +58,10 @@ public class BookController {
 	
 	@ResponseBody
 	@RequestMapping(value = "book",method = RequestMethod.GET)
-	public String book(Book book,Integer limit,Integer offset) {
+	public String book(Book book,@RequestParam(defaultValue="0",required=false)int limit,@RequestParam(defaultValue="0",required=false)int offset) {
 		String data = null;
 		Page<Book> page = PageHelper.offsetPage(offset, limit);
-		bookService.book();
+		bookService.book(book);
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("rows", page.getResult());
 		map.put("total", page.getTotal());
