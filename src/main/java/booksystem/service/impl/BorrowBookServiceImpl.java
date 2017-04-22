@@ -28,4 +28,10 @@ public class BorrowBookServiceImpl implements BorrowBookService {
 		return borrowBookDao.borrowBook(borrowBook);
 	}
 
+	@Override
+	public int addBorrow(BorrowBook borrowBook) {
+		// TODO Auto-generated method stub
+		return borrowBookDao.addBorrow(borrowBook);
+	}
+
 }

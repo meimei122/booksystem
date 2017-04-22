@@ -17,4 +17,11 @@ public interface BookDao {
 	 * @return
 	 */
 	public List<Book> book(Book book);
+	
+	/**
+	 * 借书之后图书数量修改
+	 * @param book
+	 * @return
+	 */
+	public int borrow(Integer book_isbn);
 }

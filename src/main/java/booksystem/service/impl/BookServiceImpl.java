@@ -27,4 +27,10 @@ public class BookServiceImpl implements BookService {
 		return bookDao.book(book);
 	}
 
+	@Override
+	public int borrow(Integer book_isbn) {
+		// TODO Auto-generated method stub
+		return bookDao.borrow(book_isbn);
+	}
+
 }

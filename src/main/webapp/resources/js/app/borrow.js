@@ -1,15 +1,22 @@
 /**
  * 借书页面js
- * 请求服务器数据时，你可以通过重写参数的方式添加一些额外的参数，例如 toolbar 中的参数 如果 queryParamsType = 'limit' ,返回参数必须包含
-limit, offset, search, sort, order 否则, 需要包含: 
-pageSize, pageNumber, searchText, sortName, sortOrder. 
-返回false将会终止请求
+ * 
  */
 (function(){
 	require(['jquery','bootstrap','bootTable'],function(jquery){
 		window.operateEvents = {
 		        'click .like': function (e, value, row, index) {
-		            alert('You click like action, row: ' + row.book_isbn);
+		        	var sid = 201401,
+		        		book_isbn = row.book_isbn,
+		        		book_name = row.book_name,
+		        		book_type = row.book_type;
+		        	$.post('BorrowBookController/addBorrow',{sid:sid,book_isbn:book_isbn,book_name:book_name,book_type:book_type},function(data){
+		        		if(data==2){
+		        			alert('借书数量超过上限');
+		        		}else if(data == 1){
+				        	$("#borrow_table").bootstrapTable('refresh', {url: "BookController/book"});
+		        		}
+		        	});
 		        }
 		    };
 			$("#borrow_table").bootstrapTable({

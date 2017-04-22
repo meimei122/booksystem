@@ -11,9 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import booksystem.entity.Book;
 import booksystem.entity.BorrowBook;
 import booksystem.entity.Students;
+import booksystem.service.BookService;
 import booksystem.service.BorrowBookService;
+import booksystem.service.StudentService;
 
 @Controller
 @RequestMapping("BorrowBookController")
@@ -21,6 +24,12 @@ public class BorrowBookController {
 	
 	@Resource
 	private BorrowBookService borrowBookService;
+	
+	@Resource
+	private BookService bookService;
+	
+	@Resource
+	private StudentService studentService;
 	
 	@ResponseBody
 	@RequestMapping(value = "borrowBookInfo", method = RequestMethod.POST)
@@ -39,16 +48,24 @@ public class BorrowBookController {
 		return total;
 	}
 	
-	
+	@ResponseBody
 	@RequestMapping(value = "addBorrow", method = RequestMethod.POST)
-	public String addBorrow(HttpServletRequest request) {
-		Students students = (Students) request.getSession().getAttribute("students");
-		if(students.equals(null)){
-			return "app/login";
+	public int addBorrow(HttpServletRequest request,BorrowBook borrowBook) {
+		int j = 0;
+		Students students = new Students();
+		students.setSid(borrowBook.getSid());
+		Students stu = studentService.loginInfo(students);
+		if(stu.getBorrow_num()==0){
+			j = 2;
 		}else {
-			
+			int i = borrowBookService.addBorrow(borrowBook);
+			int bookNum = bookService.borrow(borrowBook.getBook_isbn());
+			int stuNum = studentService.studentInfo(borrowBook.getSid());
+			if(i>0&&bookNum>0&&stuNum>0){
+				j = 1;
+			}
 		}
-		return "";
+		return j;
 	}
 	
 	@ResponseBody

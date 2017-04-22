@@ -31,4 +31,11 @@ public interface StudentService {
 	 * @return
 	 */
 	public int updateUser(Students students);
+	
+	/**
+	 * 修改用户可借图书数量
+	 * @param students
+	 * @return
+	 */
+	public int studentInfo(Integer sid);
 }

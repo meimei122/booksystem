@@ -16,4 +16,11 @@ public interface BookService {
 	 * @return
 	 */
 	public List<Book> book(Book book);
+	
+	/**
+	 * 修改借书之后的图书数量
+	 * @param book
+	 * @return
+	 */
+	public int borrow(Integer book_isbn);
 }

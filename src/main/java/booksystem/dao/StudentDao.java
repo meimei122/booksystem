@@ -39,4 +39,11 @@ public interface StudentDao {
 	 * @return
 	 */
 	public int updateUser(Students students);
+	
+	/**
+	 * 修改可借图书数量信息
+	 * @param students
+	 * @return
+	 */
+	public int studentInfo(Integer sid);
 }

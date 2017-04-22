@@ -23,8 +23,8 @@
 		select <include refid="column"></include>  from borrwbook WHERE sid = #{sid}
 	</select>
 
-	<!-- <insert id="addBorrow" parameterType="BorrowBook" >
-         into borrwbook (borrow_time,return_time,sid,book_isbn,borrow_num) values (#{borrow_time},#{return_time},#{sid},#{book_isbn},1)
-    </insert > -->
+	<insert id="addBorrow" parameterType="BorrowBook" >
+     	insert into borrwbook (borrow_time,return_time,sid,book_type,book_isbn,book_name,borrow_num) values (NOW(),DATE_ADD(NOW(),INTERVAL 1 MONTH),#{sid},#{book_type},#{book_isbn},#{book_name},1)
+    </insert >
 	
 </mapper>

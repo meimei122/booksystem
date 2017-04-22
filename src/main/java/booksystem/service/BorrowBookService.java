@@ -17,4 +17,11 @@ public interface BorrowBookService {
 	 * @return
 	 */
 	public List<BorrowBook> borrowBook(BorrowBook borrowBook);
+	
+	/**
+	 * 添加借书信息
+	 * @param borrowBook
+	 * @return
+	 */
+	public int addBorrow(BorrowBook borrowBook);
 }

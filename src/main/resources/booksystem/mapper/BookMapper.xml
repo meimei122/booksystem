@@ -31,4 +31,8 @@
 	    </where>
 	</select>
 	
+	<update id="borrow" parameterType="Integer">
+		 update book set book_avanum = (book_avanum - 1) where  book_isbn = #{book_isbn} 
+	</update>
+	
 </mapper>

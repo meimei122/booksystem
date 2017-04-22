@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.shiro.web.session.HttpServletSession;
+import org.aspectj.weaver.ast.Var;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -119,7 +120,6 @@ public class LoginController {
 		students.setSid(201401);
 		students.setTel(phone);
 		students.setPass(nowPassword);
-		
 		int i = studentService.updateUser(students);
 		if(i>0){
 			return "app/login"; 
@@ -127,6 +127,29 @@ public class LoginController {
 			return "app/index";
 		}
 		
+	}
+	
+	/**
+	 * 修改学生借书数量信息
+	 * @param students
+	 * @return
+	 */
+	/*@ResponseBody
+	@RequestMapping(value = "updateStudent",method = RequestMethod.POST)
+	public int updateStudent(Students students) {
+		int i = studentService.studentInfo(students);
+		return i;
+	}*/
+	
+	@ResponseBody
+	@RequestMapping(value = "selectStudent",method = RequestMethod.POST)
+	public int selectStudent(Students students) {
+		int i = 0;
+		Students studentResult = studentService.loginInfo(students);
+		if(studentResult.getBorrow_num()>0){
+			i = 1;
+		}
+		return i;
 	}
 	
 	/**

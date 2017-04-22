@@ -7,6 +7,7 @@
 		<result property = "username" column = "username" />
 		<result property = "pass" column = "spass" />
 		<result property = "tel" column = "tel" />
+		<result property = "borrow_num" column = "borrow_num" />
 	</resultMap>
 	
 	<select id="login" parameterType="Students" resultMap="StudentsResultMap">
@@ -22,6 +23,10 @@
 	</select>
 	
 	<update id="updateUser" parameterType="Students">
-		 update student set tel = #{tel},spass = #{pass} where username=#{username}
+		 update student set tel = #{tel},spass = #{pass} where sid=#{sid}
+	</update>
+	
+	<update id="studentInfo" parameterType="Integer">
+		 update student set borrow_num = (borrow_num - 1) where sid=#{sid}
 	</update>
 </mapper>

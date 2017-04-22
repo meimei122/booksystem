@@ -21,6 +21,6 @@ public interface BorrowBookDao {
 	/**
 	 * 添加借书信息
 	 */
-	//public List<BorrowBook> addBorrow(BorrowBook borrowBook);
+	public int addBorrow(BorrowBook borrowBook);
 	
 }

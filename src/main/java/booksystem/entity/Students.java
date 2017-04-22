@@ -10,6 +10,7 @@ public class Students {
 	private String username;
 	private String pass;
 	private String tel;
+	private int borrow_num;
 	
 	public Integer getSid() {
 		return sid;
@@ -34,5 +35,11 @@ public class Students {
 	}
 	public void setTel(String tel) {
 		this.tel = tel;
+	}
+	public int getBorrow_num() {
+		return borrow_num;
+	}
+	public void setBorrow_num(int borrow_num) {
+		this.borrow_num = borrow_num;
 	}
 }
