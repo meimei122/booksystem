@@ -3,7 +3,7 @@
  */
 (function(){
 	require(['jquery','bootstrap','bootTable'],function(jquery){
-		$.post("BorrowBookController/borrowBook",{sid:201401},function(data){
+		$.post("BorrowBookController/borrowBook",{sid:id},function(data){
 			var data = data;
 			$("#borrowInfo_table").bootstrapTable({
 				toolbar:'#borrowInfo_toolbar',

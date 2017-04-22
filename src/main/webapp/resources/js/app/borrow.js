@@ -4,9 +4,10 @@
  */
 (function(){
 	require(['jquery','bootstrap','bootTable'],function(jquery){
+		
 		window.operateEvents = {
 		        'click .like': function (e, value, row, index) {
-		        	var sid = 201401,
+		        	var sid = id,
 		        		book_isbn = row.book_isbn,
 		        		book_name = row.book_name,
 		        		book_type = row.book_type;

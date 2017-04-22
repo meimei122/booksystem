@@ -55,5 +55,8 @@ $(document).ready(function() {
                 }
             }
         }
-    })
+    });
+	$.post('userInfo',{},function(){
+		
+	});
 });

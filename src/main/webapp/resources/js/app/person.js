@@ -3,7 +3,7 @@
  */
 (function(){
 	require(['jquery','bootstrap','bootstrapValidator'],function($,bootstrap,bootstrapValidator){
-		$.post("userInfo",{sid:201401},function(data){
+		$.post("userInfo",{sid:id},function(data){
 			$("#username").val(data.username);
 			$("#studentId").val(data.sid);
 			$("#phone").val(data.tel);

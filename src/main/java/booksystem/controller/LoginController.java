@@ -75,7 +75,7 @@ public class LoginController {
 	 */
 	@ResponseBody
 	@RequestMapping(value = "checkName",method = RequestMethod.POST)
-	public String checkName(Students students){
+	public String checkName(Students students,HttpServletRequest request){
 		Students studentResult = studentService.userName(students);
 		boolean result = true;
 		if(studentResult==null){
@@ -83,6 +83,8 @@ public class LoginController {
 		}
 		else{
 			result = true;
+			request.getSession().setAttribute("students", studentResult);
+			request.getSession().setAttribute("sid", studentResult.getSid());
 		}
         Map<String, Boolean> map = new HashMap<>();  
         map.put("valid", result);  
@@ -115,9 +117,10 @@ public class LoginController {
 	 */
 	
 	@RequestMapping(value = "updateUser", method = RequestMethod.POST)
-	public String updateUser(String phone,String nowPassword) {
+	public String updateUser(String phone,String nowPassword,HttpServletRequest request) {
 		Students students = new Students();
-		students.setSid(201401);
+		Integer sid = (Integer) request.getSession().getAttribute("sid");
+		students.setSid(sid);
 		students.setTel(phone);
 		students.setPass(nowPassword);
 		int i = studentService.updateUser(students);
