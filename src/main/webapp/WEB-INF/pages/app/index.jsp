@@ -31,6 +31,9 @@
 					<ul class="nav-menu clearfix unstyled">
 					</ul>
 				</div>
+				<div>
+					<a href="login" class="quit"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>退出</a>
+				</div>
 			</section>
 		</div>
 		<div id="index_content">

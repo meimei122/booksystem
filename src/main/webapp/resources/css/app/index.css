@@ -13,3 +13,13 @@ body{
 #index_content .glyphicon{
 	top: 1px;
 }
+.quit{
+	float: right;
+    margin-top: -53px;
+    margin-right: 15px;
+    color: #eee;
+}
+.quit .glyphicon{
+	top: 3px;
+    right: 3px;
+}

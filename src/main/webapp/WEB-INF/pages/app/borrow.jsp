@@ -5,6 +5,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="resources/css/app/borrow.css">
+<link rel="stylesheet" href="resources/css/plugins/other/mdialog.css" />
+<script type="text/javascript" src="resources/js/component/other/zepto.min.js"></script>
+<script type="text/javascript" src="resources/js/component/other/mdialog.js"></script>
 <script type="text/javascript" src="resources/js/app/borrow.js"></script>
 <title>借书管理</title>
 </head>
