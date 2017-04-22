@@ -69,10 +69,4 @@ public class BookController {
 		return data;
 	}
 	
-	/*@ResponseBody
-	@RequestMapping(value = "borrow",method = RequestMethod.POST)
-	public int borrow(Book book){
-		int i = bookService.borrow(book);
-		return i ;
-	}*/
 }

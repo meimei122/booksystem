@@ -130,29 +130,6 @@ public class LoginController {
 	}
 	
 	/**
-	 * 修改学生借书数量信息
-	 * @param students
-	 * @return
-	 */
-	/*@ResponseBody
-	@RequestMapping(value = "updateStudent",method = RequestMethod.POST)
-	public int updateStudent(Students students) {
-		int i = studentService.studentInfo(students);
-		return i;
-	}*/
-	
-	@ResponseBody
-	@RequestMapping(value = "selectStudent",method = RequestMethod.POST)
-	public int selectStudent(Students students) {
-		int i = 0;
-		Students studentResult = studentService.loginInfo(students);
-		if(studentResult.getBorrow_num()>0){
-			i = 1;
-		}
-		return i;
-	}
-	
-	/**
 	 * 注册页面
 	 * @param model
 	 * @return

@@ -1,4 +1,7 @@
 @CHARSET "UTF-8";
+body{
+	overflow: hidden;
+}
 #bookType{
 	height: 400px;
 	width: 341px; 
