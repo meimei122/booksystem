@@ -3,7 +3,7 @@
  * 
  */
 (function(){
-	require(['jquery','bootstrap','bootTable'],function(jquery){
+	require(['jquery','bootstrap','bootTable','bootTableCn'],function(jquery){
 		
 		window.operateEvents = {
 		        'click .like': function (e, value, row, index) {

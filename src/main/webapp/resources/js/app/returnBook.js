@@ -2,7 +2,7 @@
  * 还书页面js
  */
 (function(){
-	require(['jquery','bootstrap','bootTable'],function(jquery){
+	require(['jquery','bootstrap','bootTable',,'bootTableCn'],function(jquery){
 		$.post("BorrowBookController/borrowBook",{sid:id},function(data){
 			var data = data;
 			$("#borrowInfo_table").bootstrapTable({
