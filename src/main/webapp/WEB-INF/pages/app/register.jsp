@@ -19,18 +19,18 @@
 		<div class="col-lg-3"></div>
 		<div class="col-lg-6 register">
 			<h2 class="title">用 户 注 册</h2>
-			<form id="registerForm" class="registerFormStyle" action="">
+			<form id="registerForm" class="registerFormStyle" action="studentAdd">
 				<div class="form-group">
 					<input type="text" class="comInput" id="username" name="username" placeholder="用户名"/>
 				</div>
 				<div class="form-group">
-					<input type="tel" class="comInput" id="phone" name="phone" placeholder="手机号"/>
+					<input type="tel" class="comInput" id="tel" name="tel" placeholder="手机号"/>
 				</div>
 				<div class="form-group">
-					<input type="text" class="comInput" id="studentId" name="studentId" placeholder="学   号"/>
+					<input type="text" class="comInput" id="sid" name="sid" placeholder="学   号"/>
 				</div>
 				<div class="form-group">
-					<input type="password" class="comInput" id="password1" name="password1" placeholder="初始密码"/>
+					<input type="password" class="comInput" id="pass" name="pass" placeholder="初始密码"/>
 				</div>
 				<div class="form-group">
 					<input type="password" class="comInput" id="password2" name="password2" placeholder="确认密码"/>

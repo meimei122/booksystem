@@ -22,6 +22,11 @@
 		select * from student where sid=#{sid}
 	</select>
 	
+	<insert id="stuAdd" parameterType="Students" > 
+        insert into student(sid,username,spass,tel,borrow_num) 
+        values(#{sid},#{username},#{pass},#{tel},5)  
+    </insert>
+	
 	<update id="updateUser" parameterType="Students">
 		 update student set tel = #{tel},spass = #{pass} where sid=#{sid}
 	</update>

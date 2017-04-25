@@ -143,6 +143,22 @@ public class LoginController {
 	}
 	
 	/**
+	 * 学生信息注册
+	 * @param students
+	 * @return
+	 */
+	
+	@RequestMapping(value = "studentAdd", method = RequestMethod.GET)
+	public String studentAdd(Students students) {
+		int i = studentService.stuAdd(students);
+		if(i>0){
+			return "app/login"; 
+		}else{
+			return "app/register";
+		}
+	}
+	
+	/**
 	 * 登录通过后进入到默认页面
 	 * @param model
 	 * @return

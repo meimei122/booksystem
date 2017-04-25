@@ -20,13 +20,6 @@ public interface StudentDao {
 	public Students userName(Students students);
 	
 	/**
-	 * 注册页面dao层
-	 * @param students
-	 * @return
-	 */
-	public int register(Students students);
-	
-	/**
 	 * 获取当前用户信息
 	 * @param students
 	 * @return
@@ -46,4 +39,11 @@ public interface StudentDao {
 	 * @return
 	 */
 	public int studentInfo(Integer sid);
+	
+	/**
+	 * 学生信息注册
+	 * @param sid
+	 * @return
+	 */
+	public int stuAdd(Students students);
 }

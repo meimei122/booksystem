@@ -13,9 +13,9 @@ $(document).ready(function() {
                         message: '*用户名不能为空'
                     },
                     stringLength: {
-                        min: 6,
-                        max: 18,
-                        message: '*用户名长度必须在6到18位之间'
+                        min: 3,
+                        max: 10,
+                        message: '*用户名长度必须在3到10位之间'
                     },
                     regexp: {
                         regexp: /^[a-zA-Z0-9_]+$/,
@@ -23,7 +23,7 @@ $(document).ready(function() {
                     }
                 }
             },
-            phone:{
+            tel:{
                 validators: {
                     //非空
                     notEmpty: {
@@ -40,7 +40,7 @@ $(document).ready(function() {
                     }
                 }
             },
-            studentId:{
+            sid:{
                 validators: {
                     //非空
                     notEmpty: {
@@ -51,7 +51,7 @@ $(document).ready(function() {
                     }
                 }
             },
-            password1:{
+            pass:{
                 validators: {
                     //非空
                     notEmpty: {
@@ -66,7 +66,7 @@ $(document).ready(function() {
                         message: '*密码不能为空'
                     },
                     identical: {
-	                    field: 'password1',
+	                    field: 'pass',
 	                    message: '*两次密码不相同'
 	                }
                 }

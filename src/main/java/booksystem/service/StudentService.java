@@ -38,4 +38,11 @@ public interface StudentService {
 	 * @return
 	 */
 	public int studentInfo(Integer sid);
+	
+	/**
+	 * 学生信息注册
+	 * @param sid
+	 * @return
+	 */
+	public int stuAdd(Students students);
 }

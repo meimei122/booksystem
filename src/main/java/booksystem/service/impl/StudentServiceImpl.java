@@ -42,4 +42,10 @@ public class StudentServiceImpl implements StudentService {
 		// TODO Auto-generated method stub
 		return studentDao.studentInfo(sid);
 	}
+
+	@Override
+	public int stuAdd(Students students) {
+		// TODO Auto-generated method stub
+		return studentDao.stuAdd(students);
+	}
 }
