@@ -20,7 +20,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-offset-3 col-md-6">
-					<form id="loginForm" class="form-horizontal" action="index" method="post">
+					<form id="loginForm" class="form-horizontal" action="studentIndex" method="post">
 						<span class="heading">用户登录</span>
 						<div class="form-group">
 							<input type="text" class="form-control" id="username" name="username" placeholder="用户名">
@@ -38,7 +38,7 @@
 							<span class="text">记住密码</span>
 							<button type="submit" class="btn btn-default">登录</button>
 						</div>
-						<a href="register" style="color: #00b4ef">没有账号?注册一个吧</a>
+						<a href="studentRegister" style="color: #00b4ef">没有账号?注册一个吧</a>
 					</form>
 					
 				</div>

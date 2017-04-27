@@ -32,7 +32,7 @@
 					</ul>
 				</div>
 				<div>
-					<a href="login" class="quit"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>退出</a>
+					<a href="studentLogin" class="quit"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>退出</a>
 				</div>
 			</section>
 		</div>

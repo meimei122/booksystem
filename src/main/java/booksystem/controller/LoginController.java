@@ -34,7 +34,7 @@ public class LoginController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping(value = "login",method = RequestMethod.GET)
+	@RequestMapping(value = "studentLogin",method = RequestMethod.GET)
 	public String login(Model model) {
 		return "app/login";
 	}
@@ -137,7 +137,7 @@ public class LoginController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping(value = "register", method = RequestMethod.GET)
+	@RequestMapping(value = "studentRegister", method = RequestMethod.GET)
 	public String register(Model model) {
 		return "app/register";
 	}
@@ -163,7 +163,7 @@ public class LoginController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping(value = "index", method = RequestMethod.POST)
+	@RequestMapping(value = "studentIndex", method = RequestMethod.POST)
 	public String index(Model model) {
 		return "app/index";
 	}
