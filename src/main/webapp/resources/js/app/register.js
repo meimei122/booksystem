@@ -20,6 +20,19 @@ $(document).ready(function() {
                     regexp: {
                         regexp: /^[a-zA-Z0-9_]+$/,
                         message: '*用户名只能包含大写、小写、数字和下划线'
+                    },
+                    threshold :  3 ,
+                    remote: {//ajax验证。server result:{"valid",true or false} 向服务发送当前input name值，获得一个json数据。例表示正确：{"valid",true}    
+                        url: 'checkNameRegist',//验证地址  
+                        message: '*用户名已存在',//提示消息  
+                        delay  :  6000,//每输入一个字符，就发ajax请求，服务器压力还是太大，设置2秒发送一次ajax（默认输入一个字符，提交一次，服务器压力太大）  
+                        type: 'POST',//请求方式  
+                        //自定义提交数据，默认值提交当前input value  
+                        data: function(validator) {  
+                        	return {  
+                        		username: $('[name="username"]').val()
+                        	};  
+                        }  
                     }
                 }
             },
@@ -48,6 +61,19 @@ $(document).ready(function() {
                     },
                     numeric: {
                     	message: '*学号只能输入数字'
+                    },
+                    threshold :  6 ,
+                    remote: {//ajax验证。server result:{"valid",true or false} 向服务发送当前input name值，获得一个json数据。例表示正确：{"valid",true}    
+                        url: 'checkSid',//验证地址  
+                        message: '*学号已注册',//提示消息  
+                        delay  :  6000,//每输入一个字符，就发ajax请求，服务器压力还是太大，设置2秒发送一次ajax（默认输入一个字符，提交一次，服务器压力太大）  
+                        type: 'POST',//请求方式  
+                        //自定义提交数据，默认值提交当前input value  
+                        data: function(validator) {  
+                        	return {  
+                        		sid: $('[name="sid"]').val()
+                        	};  
+                        }  
                     }
                 }
             },

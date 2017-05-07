@@ -31,6 +31,10 @@ public class BorrowBookController {
 	@Resource
 	private StudentService studentService;
 	
+	/**
+	 * 借书信息统计
+	 * @return
+	 */
 	@ResponseBody
 	@RequestMapping(value = "borrowBookInfo", method = RequestMethod.POST)
 	public List borrowBookInfo() {
@@ -48,6 +52,12 @@ public class BorrowBookController {
 		return total;
 	}
 	
+	/**
+	 * 添加借书信息
+	 * @param request
+	 * @param borrowBook
+	 * @return
+	 */
 	@ResponseBody
 	@RequestMapping(value = "addBorrow", method = RequestMethod.POST)
 	public int addBorrow(HttpServletRequest request,BorrowBook borrowBook) {
@@ -68,6 +78,11 @@ public class BorrowBookController {
 		return j;
 	}
 	
+	/**
+	 * 已借图书信息
+	 * @param borrowBook
+	 * @return
+	 */
 	@ResponseBody
 	@RequestMapping(value = "borrowBook", method = RequestMethod.POST)
 	public List<BorrowBook> borrowBook(BorrowBook borrowBook){

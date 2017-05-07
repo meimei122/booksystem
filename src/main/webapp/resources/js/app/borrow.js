@@ -13,9 +13,10 @@
 		        		book_type = row.book_type;
 		        	$.post('BorrowBookController/addBorrow',{sid:sid,book_isbn:book_isbn,book_name:book_name,book_type:book_type},function(data){
 		        		if(data==2){
-		        			new TipBox({type:'error',str:'对不起,您借书数量超过上限!',hasBtn:true});
+		        			new TipBox({type:'error',str:'对不起,您借书数量超过上限!',clickDomCancel:true,setTime:2000,hasBtn:true});
 		        		}else if(data == 1){
 				        	$("#borrow_table").bootstrapTable('refresh', {url: "BookController/book"});
+				        	new TipBox({type:'success',str:'借书成功!',clickDomCancel:true,setTime:2000,hasBtn:true});
 		        		}
 		        	});
 		        }

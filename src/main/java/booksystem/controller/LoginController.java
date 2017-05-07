@@ -97,6 +97,62 @@ public class LoginController {
         }  
         return resultString;  
     }  
+	
+	/**
+	 * 注册页面判断用户名是否存在
+	 * @param students
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "checkNameRegist",method = RequestMethod.POST)
+	public String checkNameRegist(Students students){
+		Students studentResult = studentService.userName(students);
+		boolean result = true;
+		if(studentResult==null){
+			result = true;
+		}
+		else{
+			result = false;
+		}
+        Map<String, Boolean> map = new HashMap<>();  
+        map.put("valid", result);  
+        ObjectMapper mapper = new ObjectMapper();  
+        String resultString = "";  
+        try {  
+            resultString = mapper.writeValueAsString(map);  
+        } catch (JsonProcessingException e) {  
+            e.printStackTrace();  
+        }  
+        return resultString;  
+    }  
+	
+	/**
+	 * 判断学号是否已注册
+	 * @param students
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "checkSid",method = RequestMethod.POST)
+	public String checkSid(Students students){
+		Students studentResult = studentService.loginInfo(students);
+		boolean result = true;
+		if(studentResult==null){
+			result = true;
+		}
+		else{
+			result = false;
+		}
+        Map<String, Boolean> map = new HashMap<>();  
+        map.put("valid", result);  
+        ObjectMapper mapper = new ObjectMapper();  
+        String resultString = "";  
+        try {  
+            resultString = mapper.writeValueAsString(map);  
+        } catch (JsonProcessingException e) {  
+            e.printStackTrace();  
+        }  
+        return resultString;  
+    }  
 
 	/**
 	 * 获取当前用户信息
