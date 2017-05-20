@@ -27,6 +27,7 @@
 			 	height: 380,
 			 	striped:true,
 			    search:false,
+			    showRefresh:true,
 			    showColumns:true,//显示字段
 			    pagination:true,//底部数据信息
 			    sidePagination:"server",

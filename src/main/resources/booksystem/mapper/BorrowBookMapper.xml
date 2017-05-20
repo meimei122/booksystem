@@ -20,7 +20,7 @@
 	</select>
 	
 	<select id="borrowBook" parameterType="BorrowBook" resultMap="BorrowBookResultMap">
-		select <include refid="column"></include>  from borrwbook WHERE sid = #{sid}
+		select <include refid="column"></include>  from borrwbook WHERE sid = #{sid} order by return_time desc
 	</select>
 
 	<insert id="addBorrow" parameterType="BorrowBook" >
