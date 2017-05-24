@@ -28,6 +28,10 @@ public class BookController {
 	@Resource
 	private BookService bookService;
 	
+	/**
+	 * 首页图书信息统计
+	 * @return
+	 */
 	@ResponseBody
 	@RequestMapping(value = "bookInfo",method = RequestMethod.POST)
 	public List<UtilEntity> bookInfo() {
@@ -56,6 +60,13 @@ public class BookController {
 		return utilList;
 	}
 	
+	/**
+	 * 借书表图书信息统计
+	 * @param book
+	 * @param limit
+	 * @param offset
+	 * @return
+	 */
 	@ResponseBody
 	@RequestMapping(value = "book",method = RequestMethod.GET)
 	public String book(Book book,@RequestParam(defaultValue="0",required=false)int limit,@RequestParam(defaultValue="0",required=false)int offset) {
